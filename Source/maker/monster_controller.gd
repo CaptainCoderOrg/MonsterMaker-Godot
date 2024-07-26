@@ -10,6 +10,9 @@ extends Node2D
 @onready var right_antenna_sprite = %RightAntennaSprite
 @onready var left_eye_sprite = %LeftEyeSprite
 @onready var right_eye_sprite = %RightEyeSprite
+@onready var left_brow = %LeftBrow
+@onready var right_brow = %RightBrow
+@onready var mouth_sprite = %MouthSprite
 
 func set_body(texture : Texture2D):
 	body.texture = texture
@@ -29,3 +32,10 @@ func set_antenna(texture : Texture2D):
 func set_eye(texture : Texture2D):
 	left_eye_sprite.texture = texture
 	right_eye_sprite.texture = texture
+	
+func set_brow(texture : Texture2D):
+	left_brow.texture = texture
+	right_brow.texture = texture
+
+func set_mouth(texture : Texture2D):
+	mouth_sprite.texture = texture

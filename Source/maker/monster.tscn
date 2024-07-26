@@ -80,7 +80,8 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("4_xs4yd")
 
-[node name="MouthA" type="Sprite2D" parent="."]
+[node name="MouthSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, 57)
 texture = ExtResource("5_xhisx")
 
@@ -116,12 +117,17 @@ self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(11, -24)
 texture = ExtResource("8_y0m53")
 
-[node name="LeftBrow" type="Sprite2D" parent="."]
-position = Vector2(-47.5, -66)
+[node name="Brows" type="Node2D" parent="."]
+position = Vector2(0, -66)
+
+[node name="LeftBrow" type="Sprite2D" parent="Brows"]
+unique_name_in_owner = true
+position = Vector2(-47.5, 0)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("9_5lwyi")
 
-[node name="RightBrow" type="Sprite2D" parent="."]
-position = Vector2(50.5, -66)
+[node name="RightBrow" type="Sprite2D" parent="Brows"]
+unique_name_in_owner = true
+position = Vector2(50.5, 0)
 texture = ExtResource("9_5lwyi")

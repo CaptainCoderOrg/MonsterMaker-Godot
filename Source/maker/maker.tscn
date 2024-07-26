@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=73 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Texture2D" uid="uid://b6mjgmev72o0j" path="res://MonsterSprites/Bodies/body_whiteF.png" id="1_0d3sc"]
 [ext_resource type="PackedScene" uid="uid://7shrqes6ug2w" path="res://maker/monster.tscn" id="1_dpxp4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c5u1thpitxoe7" path="res://MonsterSprites/Bodies/body_whiteD.png" id="5_sj1dc"]
 [ext_resource type="Texture2D" uid="uid://c0fyjib2ryjp1" path="res://MonsterSprites/Bodies/body_whiteE.png" id="6_ktyhp"]
 [ext_resource type="Texture2D" uid="uid://b4lmq4xpwi370" path="res://MonsterSprites/Legs/leg_whiteA.png" id="6_uljaw"]
+[ext_resource type="Texture2D" uid="uid://cu63skon0knoc" path="res://MonsterSprites/Face/NoseDecoration/snot_small.png" id="7_di8rp"]
 [ext_resource type="Texture2D" uid="uid://b40w6xam6b58p" path="res://MonsterSprites/Antenna/detail_white_antenna_large.png" id="7_r027q"]
 [ext_resource type="Texture2D" uid="uid://brasmimxtld2k" path="res://MonsterSprites/Arms/arm_whiteB.png" id="9_1nr2y"]
 [ext_resource type="Script" path="res://maker/monster_button_scripts/monster_arm_modifier_button.gd" id="9_d1oxv"]
@@ -69,6 +70,8 @@
 [ext_resource type="Script" path="res://maker/monster_button_scripts/monster_nose_modifier_button.gd" id="66_lox8f"]
 [ext_resource type="Texture2D" uid="uid://bg00fglso843" path="res://MonsterSprites/Face/Nose/nose_green.png" id="67_mvyxu"]
 [ext_resource type="Texture2D" uid="uid://cy6tften5gy72" path="res://MonsterSprites/Face/Nose/nose_yellow.png" id="69_vsnk2"]
+[ext_resource type="Texture2D" uid="uid://3ebryuvo88ky" path="res://MonsterSprites/Face/NoseDecoration/snot_large.png" id="70_8wsnj"]
+[ext_resource type="Script" path="res://maker/monster_button_scripts/monster_snot_modifier_button.gd" id="71_6kuc3"]
 
 [node name="Maker" type="Node2D"]
 
@@ -81,10 +84,8 @@ position = Vector2(854, 248)
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
-current_tab = 7
 
 [node name="Body" type="PanelContainer" parent="CanvasLayer/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Body"]
@@ -471,6 +472,7 @@ texture_normal = ExtResource("64_oeo2b")
 script = ExtResource("51_5sq4x")
 
 [node name="Nose" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Nose"]
@@ -503,3 +505,28 @@ script = ExtResource("66_lox8f")
 layout_mode = 2
 texture_normal = ExtResource("69_vsnk2")
 script = ExtResource("66_lox8f")
+
+[node name="Snot" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Snot"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BodyGrid" type="GridContainer" parent="CanvasLayer/TabContainer/Snot/MarginContainer"]
+layout_mode = 2
+columns = 7
+
+[node name="Snot" parent="CanvasLayer/TabContainer/Snot/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("70_8wsnj")
+script = ExtResource("71_6kuc3")
+
+[node name="Snot2" parent="CanvasLayer/TabContainer/Snot/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("7_di8rp")
+script = ExtResource("71_6kuc3")

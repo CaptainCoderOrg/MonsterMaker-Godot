@@ -14,6 +14,7 @@ extends Node2D
 @onready var right_brow = %RightBrow
 @onready var mouth_sprite = %MouthSprite
 @onready var nose_sprite = %NoseSprite
+@onready var snot_sprite = %SnotSprite
 
 func set_body(texture : Texture2D):
 	body.texture = texture
@@ -43,3 +44,7 @@ func set_mouth(texture : Texture2D):
 
 func set_nose(texture : Texture2D):
 	nose_sprite.texture = texture
+
+func set_snot(texture : Texture2D):
+	snot_sprite.texture = texture
+

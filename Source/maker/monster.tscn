@@ -85,7 +85,8 @@ unique_name_in_owner = true
 position = Vector2(0, 57)
 texture = ExtResource("5_xhisx")
 
-[node name="NoseRed" type="Sprite2D" parent="."]
+[node name="NoseSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, 1)
 texture = ExtResource("6_tibhy")
 

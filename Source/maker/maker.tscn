@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=70 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Texture2D" uid="uid://b6mjgmev72o0j" path="res://MonsterSprites/Bodies/body_whiteF.png" id="1_0d3sc"]
 [ext_resource type="PackedScene" uid="uid://7shrqes6ug2w" path="res://maker/monster.tscn" id="1_dpxp4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="3_v0umc"]
 [ext_resource type="Texture2D" uid="uid://px8c15ds77it" path="res://MonsterSprites/Bodies/body_whiteC.png" id="4_f3wo2"]
 [ext_resource type="Texture2D" uid="uid://db7b7c3xg0r1k" path="res://MonsterSprites/Face/Mouth/mouthA.png" id="4_x2s83"]
+[ext_resource type="Texture2D" uid="uid://7ess8sj274qu" path="res://MonsterSprites/Face/Nose/nose_red.png" id="5_q3g0h"]
 [ext_resource type="Texture2D" uid="uid://c5u1thpitxoe7" path="res://MonsterSprites/Bodies/body_whiteD.png" id="5_sj1dc"]
 [ext_resource type="Texture2D" uid="uid://c0fyjib2ryjp1" path="res://MonsterSprites/Bodies/body_whiteE.png" id="6_ktyhp"]
 [ext_resource type="Texture2D" uid="uid://b4lmq4xpwi370" path="res://MonsterSprites/Legs/leg_whiteA.png" id="6_uljaw"]
@@ -64,6 +65,10 @@
 [ext_resource type="Texture2D" uid="uid://m4ku6gwdv60r" path="res://MonsterSprites/Face/Mouth/mouth_closed_happy.png" id="62_o635h"]
 [ext_resource type="Texture2D" uid="uid://cpnrpyud610og" path="res://MonsterSprites/Face/Mouth/mouth_closed_sad.png" id="63_2x6qg"]
 [ext_resource type="Texture2D" uid="uid://y8xkh3rhpybo" path="res://MonsterSprites/Face/Mouth/mouth_closed_teeth.png" id="64_oeo2b"]
+[ext_resource type="Texture2D" uid="uid://bd6cjevw6t2jq" path="res://MonsterSprites/Face/Nose/nose_brown.png" id="65_qxrsx"]
+[ext_resource type="Script" path="res://maker/monster_button_scripts/monster_nose_modifier_button.gd" id="66_lox8f"]
+[ext_resource type="Texture2D" uid="uid://bg00fglso843" path="res://MonsterSprites/Face/Nose/nose_green.png" id="67_mvyxu"]
+[ext_resource type="Texture2D" uid="uid://cy6tften5gy72" path="res://MonsterSprites/Face/Nose/nose_yellow.png" id="69_vsnk2"]
 
 [node name="Maker" type="Node2D"]
 
@@ -76,7 +81,7 @@ position = Vector2(854, 248)
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
-current_tab = 6
+current_tab = 7
 
 [node name="Body" type="PanelContainer" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -381,6 +386,7 @@ texture_normal = ExtResource("49_x1n0g")
 script = ExtResource("46_06qqt")
 
 [node name="Mouth" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Mouth"]
@@ -463,3 +469,37 @@ script = ExtResource("51_5sq4x")
 layout_mode = 2
 texture_normal = ExtResource("64_oeo2b")
 script = ExtResource("51_5sq4x")
+
+[node name="Nose" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Nose"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BodyGrid" type="GridContainer" parent="CanvasLayer/TabContainer/Nose/MarginContainer"]
+layout_mode = 2
+columns = 7
+
+[node name="Nose" parent="CanvasLayer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("65_qxrsx")
+script = ExtResource("66_lox8f")
+
+[node name="Nose2" parent="CanvasLayer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("67_mvyxu")
+script = ExtResource("66_lox8f")
+
+[node name="Nose3" parent="CanvasLayer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("5_q3g0h")
+script = ExtResource("66_lox8f")
+
+[node name="Nose4" parent="CanvasLayer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("69_vsnk2")
+script = ExtResource("66_lox8f")

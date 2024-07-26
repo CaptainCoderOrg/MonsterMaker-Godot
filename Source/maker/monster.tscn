@@ -68,11 +68,13 @@ texture = ExtResource("3_2203w")
 [node name="Eyes" type="Node2D" parent="."]
 position = Vector2(0, -42)
 
-[node name="LeftEye" type="Sprite2D" parent="Eyes"]
+[node name="LeftEyeSprite" type="Sprite2D" parent="Eyes"]
+unique_name_in_owner = true
 position = Vector2(-48, 10)
 texture = ExtResource("4_xs4yd")
 
-[node name="RightEye" type="Sprite2D" parent="Eyes"]
+[node name="RightEyeSprite" type="Sprite2D" parent="Eyes"]
+unique_name_in_owner = true
 position = Vector2(48, 10)
 rotation = 3.14159
 scale = Vector2(1, -1)
@@ -98,7 +100,8 @@ position = Vector2(-30, 0)
 rotation = 2.79253
 scale = Vector2(1, -1)
 
-[node name="DetailWhiteAntennaLarge" type="Sprite2D" parent="Antenna/LeftAntenna"]
+[node name="LeftAntennaSprite" type="Sprite2D" parent="Antenna/LeftAntenna"]
+unique_name_in_owner = true
 self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(11, -24)
 texture = ExtResource("8_y0m53")
@@ -107,7 +110,8 @@ texture = ExtResource("8_y0m53")
 position = Vector2(30, 0)
 rotation = 0.359538
 
-[node name="DetailWhiteAntennaLarge" type="Sprite2D" parent="Antenna/RightAntenna"]
+[node name="RightAntennaSprite" type="Sprite2D" parent="Antenna/RightAntenna"]
+unique_name_in_owner = true
 self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(11, -24)
 texture = ExtResource("8_y0m53")

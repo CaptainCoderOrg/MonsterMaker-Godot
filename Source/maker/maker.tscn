@@ -1,14 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=46 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Texture2D" uid="uid://b6mjgmev72o0j" path="res://MonsterSprites/Bodies/body_whiteF.png" id="1_0d3sc"]
 [ext_resource type="PackedScene" uid="uid://7shrqes6ug2w" path="res://maker/monster.tscn" id="1_dpxp4"]
 [ext_resource type="PackedScene" uid="uid://ck2t761s0r3s4" path="res://monster_modifier_button.tscn" id="2_6ry47"]
 [ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="2_8d7dv"]
 [ext_resource type="Texture2D" uid="uid://byyw1tey0evw4" path="res://MonsterSprites/Bodies/body_whiteB.png" id="3_6wxpq"]
+[ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="3_v0umc"]
 [ext_resource type="Texture2D" uid="uid://px8c15ds77it" path="res://MonsterSprites/Bodies/body_whiteC.png" id="4_f3wo2"]
 [ext_resource type="Texture2D" uid="uid://c5u1thpitxoe7" path="res://MonsterSprites/Bodies/body_whiteD.png" id="5_sj1dc"]
 [ext_resource type="Texture2D" uid="uid://c0fyjib2ryjp1" path="res://MonsterSprites/Bodies/body_whiteE.png" id="6_ktyhp"]
 [ext_resource type="Texture2D" uid="uid://b4lmq4xpwi370" path="res://MonsterSprites/Legs/leg_whiteA.png" id="6_uljaw"]
+[ext_resource type="Texture2D" uid="uid://b40w6xam6b58p" path="res://MonsterSprites/Antenna/detail_white_antenna_large.png" id="7_r027q"]
 [ext_resource type="Texture2D" uid="uid://brasmimxtld2k" path="res://MonsterSprites/Arms/arm_whiteB.png" id="9_1nr2y"]
 [ext_resource type="Script" path="res://maker/monster_button_scripts/monster_arm_modifier_button.gd" id="9_d1oxv"]
 [ext_resource type="Texture2D" uid="uid://b06ownhdk4bl2" path="res://MonsterSprites/Arms/arm_whiteC.png" id="10_51kvv"]
@@ -19,6 +21,30 @@
 [ext_resource type="Texture2D" uid="uid://dpqw1mnnhnovt" path="res://MonsterSprites/Legs/leg_whiteC.png" id="16_vj2wc"]
 [ext_resource type="Texture2D" uid="uid://d3ggp1fequ0of" path="res://MonsterSprites/Legs/leg_whiteD.png" id="17_gxjhg"]
 [ext_resource type="Texture2D" uid="uid://bhqt5xerlw807" path="res://MonsterSprites/Legs/leg_whiteE.png" id="18_aikwy"]
+[ext_resource type="Script" path="res://maker/monster_button_scripts/monster_antenna_modifier_button.gd" id="20_qkm2l"]
+[ext_resource type="Texture2D" uid="uid://00qag6jbq0pk" path="res://MonsterSprites/Antenna/detail_white_antenna_small.png" id="22_nq0w7"]
+[ext_resource type="Texture2D" uid="uid://bkffajjkl5pqp" path="res://MonsterSprites/Antenna/detail_white_ear.png" id="23_8rd28"]
+[ext_resource type="Texture2D" uid="uid://c86vxywtay35g" path="res://MonsterSprites/Antenna/detail_white_ear_round.png" id="24_qai80"]
+[ext_resource type="Texture2D" uid="uid://dfnf8unyebyw" path="res://MonsterSprites/Antenna/detail_white_eye.png" id="25_ymcfj"]
+[ext_resource type="Texture2D" uid="uid://fanlaborj4y8" path="res://MonsterSprites/Antenna/detail_white_horn_large.png" id="26_w8vjo"]
+[ext_resource type="Texture2D" uid="uid://bmwx4etu2gyvv" path="res://MonsterSprites/Antenna/detail_white_horn_small.png" id="27_kna0p"]
+[ext_resource type="Script" path="res://maker/monster_button_scripts/monster_eye_modifier_button.gd" id="28_svwup"]
+[ext_resource type="Texture2D" uid="uid://s4fv2qa1tl15" path="res://MonsterSprites/Face/Eyes/eye_angry_green.png" id="30_7sto3"]
+[ext_resource type="Texture2D" uid="uid://c352le5jh4wku" path="res://MonsterSprites/Face/Eyes/eye_angry_red.png" id="31_lkfxc"]
+[ext_resource type="Texture2D" uid="uid://bmmxymolt72ne" path="res://MonsterSprites/Face/Eyes/eye_blue.png" id="32_c34x7"]
+[ext_resource type="Texture2D" uid="uid://bfkrl5i2limw" path="res://MonsterSprites/Face/Eyes/eye_closed_feminine.png" id="33_jk1ba"]
+[ext_resource type="Texture2D" uid="uid://mkwgar3xn6wb" path="res://MonsterSprites/Face/Eyes/eye_closed_happy.png" id="34_vfas7"]
+[ext_resource type="Texture2D" uid="uid://c7jnpm8kixn5j" path="res://MonsterSprites/Face/Eyes/eye_cute_dark.png" id="35_vogf1"]
+[ext_resource type="Texture2D" uid="uid://bud0qf4atbdig" path="res://MonsterSprites/Face/Eyes/eye_cute_light.png" id="36_20qtd"]
+[ext_resource type="Texture2D" uid="uid://b3ofgmcfhdkw0" path="res://MonsterSprites/Face/Eyes/eye_dead.png" id="37_xy6vv"]
+[ext_resource type="Texture2D" uid="uid://o0hwker4xqa6" path="res://MonsterSprites/Face/Eyes/eye_human.png" id="38_4r7sb"]
+[ext_resource type="Texture2D" uid="uid://cfqvjd7jt20y3" path="res://MonsterSprites/Face/Eyes/eye_human_blue.png" id="39_hotqx"]
+[ext_resource type="Texture2D" uid="uid://b4d8xn55ubges" path="res://MonsterSprites/Face/Eyes/eye_human_green.png" id="40_e0dop"]
+[ext_resource type="Texture2D" uid="uid://cio1faqa47dcg" path="res://MonsterSprites/Face/Eyes/eye_human_red.png" id="41_m8kcy"]
+[ext_resource type="Texture2D" uid="uid://c6he6ijnyju8f" path="res://MonsterSprites/Face/Eyes/eye_psycho_dark.png" id="42_5m6tj"]
+[ext_resource type="Texture2D" uid="uid://mafn7aa34a65" path="res://MonsterSprites/Face/Eyes/eye_psycho_light.png" id="43_3eqvo"]
+[ext_resource type="Texture2D" uid="uid://0hdh8vilv0dh" path="res://MonsterSprites/Face/Eyes/eye_red.png" id="44_ajmvc"]
+[ext_resource type="Texture2D" uid="uid://0y0k2uuo072i" path="res://MonsterSprites/Face/Eyes/eye_yellow.png" id="45_7xhwc"]
 
 [node name="Maker" type="Node2D"]
 
@@ -30,7 +56,7 @@ position = Vector2(854, 248)
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
-current_tab = 2
+current_tab = 4
 
 [node name="Body" type="PanelContainer" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -124,6 +150,7 @@ script = ExtResource("9_d1oxv")
 controller = NodePath("../../../../../../Monster")
 
 [node name="Legs" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Legs"]
@@ -166,4 +193,178 @@ controller = NodePath("../../../../../../Monster")
 layout_mode = 2
 texture_normal = ExtResource("18_aikwy")
 script = ExtResource("15_ffxcv")
+controller = NodePath("../../../../../../Monster")
+
+[node name="Antenna" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Antenna"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BodyGrid" type="GridContainer" parent="CanvasLayer/TabContainer/Antenna/MarginContainer"]
+modulate = Color(0.388235, 0.729412, 0.180392, 1)
+layout_mode = 2
+columns = 7
+
+[node name="AntennaA" parent="CanvasLayer/TabContainer/Antenna/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("7_r027q")
+script = ExtResource("20_qkm2l")
+controller = NodePath("../../../../../../Monster")
+
+[node name="AntennaB" parent="CanvasLayer/TabContainer/Antenna/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("22_nq0w7")
+script = ExtResource("20_qkm2l")
+controller = NodePath("../../../../../../Monster")
+
+[node name="AntennaC" parent="CanvasLayer/TabContainer/Antenna/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("23_8rd28")
+script = ExtResource("20_qkm2l")
+controller = NodePath("../../../../../../Monster")
+
+[node name="AntennaD" parent="CanvasLayer/TabContainer/Antenna/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("24_qai80")
+script = ExtResource("20_qkm2l")
+controller = NodePath("../../../../../../Monster")
+
+[node name="AntennaE" parent="CanvasLayer/TabContainer/Antenna/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("25_ymcfj")
+script = ExtResource("20_qkm2l")
+controller = NodePath("../../../../../../Monster")
+
+[node name="AntennaF" parent="CanvasLayer/TabContainer/Antenna/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("26_w8vjo")
+script = ExtResource("20_qkm2l")
+controller = NodePath("../../../../../../Monster")
+
+[node name="AntennaG" parent="CanvasLayer/TabContainer/Antenna/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("27_kna0p")
+script = ExtResource("20_qkm2l")
+controller = NodePath("../../../../../../Monster")
+
+[node name="Eyes" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Eyes"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BodyGrid" type="GridContainer" parent="CanvasLayer/TabContainer/Eyes/MarginContainer"]
+layout_mode = 2
+columns = 7
+
+[node name="EyeA" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("3_v0umc")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA2" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("30_7sto3")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA3" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("31_lkfxc")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA4" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("32_c34x7")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA5" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("33_jk1ba")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA6" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("34_vfas7")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA7" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("35_vogf1")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA8" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("36_20qtd")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA9" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("37_xy6vv")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA10" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("38_4r7sb")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA11" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("39_hotqx")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA12" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("40_e0dop")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA13" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("41_m8kcy")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA14" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("42_5m6tj")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA15" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("43_3eqvo")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA16" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("44_ajmvc")
+script = ExtResource("28_svwup")
+controller = NodePath("../../../../../../Monster")
+
+[node name="EyeA17" parent="CanvasLayer/TabContainer/Eyes/MarginContainer/BodyGrid" node_paths=PackedStringArray("controller") instance=ExtResource("2_6ry47")]
+layout_mode = 2
+texture_normal = ExtResource("45_7xhwc")
+script = ExtResource("28_svwup")
 controller = NodePath("../../../../../../Monster")

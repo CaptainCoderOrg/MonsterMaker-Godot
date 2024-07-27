@@ -1,20 +1,20 @@
 class_name MonsterController
 extends Node2D
 
-@onready var body = %Body
-@onready var left_arm_sprite = %LeftArmSprite
-@onready var right_arm_sprite = %RightArmSprite
-@onready var right_leg_sprite = %RightLegSprite
-@onready var left_leg_sprite = %LeftLegSprite
-@onready var left_antenna_sprite = %LeftAntennaSprite
-@onready var right_antenna_sprite = %RightAntennaSprite
-@onready var left_eye_sprite = %LeftEyeSprite
-@onready var right_eye_sprite = %RightEyeSprite
-@onready var left_brow = %LeftBrow
-@onready var right_brow = %RightBrow
-@onready var mouth_sprite = %MouthSprite
-@onready var nose_sprite = %NoseSprite
-@onready var snot_sprite = %SnotSprite
+@onready var body : Sprite2D = %Body
+@onready var left_arm_sprite : Sprite2D = %LeftArmSprite
+@onready var right_arm_sprite : Sprite2D = %RightArmSprite
+@onready var right_leg_sprite : Sprite2D = %RightLegSprite
+@onready var left_leg_sprite : Sprite2D = %LeftLegSprite
+@onready var left_antenna_sprite : Sprite2D = %LeftAntennaSprite
+@onready var right_antenna_sprite : Sprite2D = %RightAntennaSprite
+@onready var left_eye_sprite : Sprite2D = %LeftEyeSprite
+@onready var right_eye_sprite : Sprite2D = %RightEyeSprite
+@onready var left_brow : Sprite2D = %LeftBrow
+@onready var right_brow : Sprite2D = %RightBrow
+@onready var mouth_sprite : Sprite2D = %MouthSprite
+@onready var nose_sprite : Sprite2D = %NoseSprite
+@onready var snot_sprite : Sprite2D = %SnotSprite
 
 func set_body(texture : Texture2D):
 	body.texture = texture

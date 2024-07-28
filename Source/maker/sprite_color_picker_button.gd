@@ -1,9 +1,10 @@
-class_name SpriteColorPickerButton
+class_name Node2DColorPickerButton
 extends ColorPickerButton
 
-@export var sprites : Array[Sprite2D]
+@export var node : Node2D
+
+func _ready():
+	color_changed.connect(_on_color_changed)
 
 func _on_color_changed(color):
-	print("change color")
-	for sprite in sprites:
-		sprite.self_modulate = color
+	node.modulate = color

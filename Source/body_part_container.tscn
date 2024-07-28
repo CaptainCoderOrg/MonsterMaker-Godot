@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsm5vhw0hn815"]
+[gd_scene load_steps=7 format=3 uid="uid://ciefuun2yoi34"]
 
 [ext_resource type="PackedScene" uid="uid://ck2t761s0r3s4" path="res://monster_modifier_button.tscn" id="1_crq2v"]
 [ext_resource type="Texture2D" uid="uid://byyw1tey0evw4" path="res://MonsterSprites/Bodies/body_whiteB.png" id="2_dfahk"]
@@ -7,28 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0fyjib2ryjp1" path="res://MonsterSprites/Bodies/body_whiteE.png" id="5_vkgaq"]
 [ext_resource type="Texture2D" uid="uid://b6mjgmev72o0j" path="res://MonsterSprites/Bodies/body_whiteF.png" id="6_v2fof"]
 
-[sub_resource type="GDScript" id="GDScript_w3ct4"]
-script/source = "extends PanelContainer
-
-@export var monster : MonsterController
-"
-
-[sub_resource type="GDScript" id="GDScript_dtjhd"]
-script/source = "extends ColorPickerButton
-
-@onready var body_grid : GridContainer = $\"../BodyGrid\"
-@onready var monster : MonsterController = %Monster
-
-func _ready():
-	color = body_grid.modulate
-
-func _on_color_changed(color):
-	body_grid.modulate = color
-	monster.body.self_modulate = color
-"
-
 [node name="Body" type="PanelContainer"]
-script = SubResource("GDScript_w3ct4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -72,6 +51,5 @@ texture_normal = ExtResource("6_v2fof")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Color"
-script = SubResource("GDScript_dtjhd")
 
 [connection signal="color_changed" from="MarginContainer/HBoxContainer/ColorPickerButton" to="MarginContainer/HBoxContainer/ColorPickerButton" method="_on_color_changed"]

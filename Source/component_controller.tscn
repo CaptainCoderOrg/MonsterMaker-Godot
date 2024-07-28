@@ -1,0 +1,147 @@
+[gd_scene load_steps=14 format=3 uid="uid://c2imyk2an5w20"]
+
+[ext_resource type="Script" path="res://maker/component_controller.gd" id="1_3xlxh"]
+[ext_resource type="Script" path="res://maker/sprite_color_picker_button.gd" id="2_62d85"]
+[ext_resource type="Script" path="res://maker/sprite_position_slider.gd" id="3_cn03k"]
+[ext_resource type="Script" path="res://maker/spacing_slider.gd" id="4_wg5u8"]
+[ext_resource type="Script" path="res://maker/rotation_slider.gd" id="5_rdtrs"]
+[ext_resource type="Script" path="res://maker/flip_x_toggle.gd" id="6_t6qcf"]
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="7_ahinf"]
+[ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="8_5yvgr"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="9_bdumb"]
+[ext_resource type="Texture2D" uid="uid://brasmimxtld2k" path="res://MonsterSprites/Arms/arm_whiteB.png" id="10_ccwxp"]
+[ext_resource type="Texture2D" uid="uid://b06ownhdk4bl2" path="res://MonsterSprites/Arms/arm_whiteC.png" id="11_823ok"]
+[ext_resource type="Texture2D" uid="uid://bdr1bhdcshjep" path="res://MonsterSprites/Arms/arm_whiteD.png" id="12_57s6n"]
+[ext_resource type="Texture2D" uid="uid://8fdnpu84kskv" path="res://MonsterSprites/Arms/arm_whiteE.png" id="13_jsqmo"]
+
+[node name="ComponentController" type="MarginContainer"]
+script = ExtResource("1_3xlxh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+script = ExtResource("2_62d85")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Y Position"
+
+[node name="PositionSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -100.0
+script = ExtResource("3_cn03k")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "X Position"
+
+[node name="SpacingSlider" type="HSlider" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -100.0
+value = 80.0
+script = ExtResource("4_wg5u8")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Rotation"
+
+[node name="RotationSlider" type="HSlider" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -360.0
+max_value = 360.0
+value = 30.0
+script = ExtResource("5_rdtrs")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Flip X"
+
+[node name="FlipXToggle" type="CheckButton" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+script = ExtResource("6_t6qcf")
+
+[node name="Arms" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Arms"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Arms/MarginContainer"]
+layout_mode = 2
+
+[node name="SpriteGrid" type="GridContainer" parent="VBoxContainer/Arms/MarginContainer/HBoxContainer"]
+layout_mode = 2
+columns = 5
+script = ExtResource("7_ahinf")
+
+[node name="ArmA" type="TextureButton" parent="VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_5yvgr")
+script = ExtResource("9_bdumb")
+
+[node name="ArmB" type="TextureButton" parent="VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_ccwxp")
+script = ExtResource("9_bdumb")
+
+[node name="ArmC" type="TextureButton" parent="VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("11_823ok")
+script = ExtResource("9_bdumb")
+
+[node name="ArmD" type="TextureButton" parent="VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("12_57s6n")
+script = ExtResource("9_bdumb")
+
+[node name="ArmE" type="TextureButton" parent="VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("13_jsqmo")
+script = ExtResource("9_bdumb")

@@ -1,7 +1,7 @@
 class_name SpriteSelectionGrid
 extends GridContainer
 
-@export var sprite : Sprite2D
+@onready var controller : ComponentController = owner
 
 func update_sprite(texture : Texture2D):
-	sprite.texture = texture
+	controller.target.sprite.texture = texture

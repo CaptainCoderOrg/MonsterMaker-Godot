@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=21 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="PackedScene" uid="uid://ciefuun2yoi34" path="res://body_part_container.tscn" id="2_6ry47"]
 [ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="2_8d7dv"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://8fdnpu84kskv" path="res://MonsterSprites/Arms/arm_whiteE.png" id="12_b520p"]
 [ext_resource type="Script" path="res://maker/spacing_slider.gd" id="17_rfanc"]
 [ext_resource type="Script" path="res://maker/rotation_slider.gd" id="18_lmo8p"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="19_5emk4"]
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="19_6e0i6"]
 [ext_resource type="Script" path="res://maker/sprite_color_picker_button.gd" id="65_rwcld"]
 [ext_resource type="Script" path="res://maker/sprite_position_slider.gd" id="66_xuuho"]
 
@@ -26,22 +28,23 @@ unique_name_in_owner = true
 position = Vector2(854, 248)
 
 [node name="Arms" type="Node2D" parent="Monster"]
-modulate = Color(0, 0.86, 0.645, 1)
 
 [node name="RightArm" type="Node2D" parent="Monster/Arms"]
+modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(80, 0)
 rotation = -0.523599
 
-[node name="LeftArmSprite" type="Sprite2D" parent="Monster/Arms/RightArm"]
+[node name="RightArmSprite" type="Sprite2D" parent="Monster/Arms/RightArm"]
 unique_name_in_owner = true
 position = Vector2(20, 59)
 texture = ExtResource("2_8d7dv")
 
 [node name="LeftArm" type="Node2D" parent="Monster/Arms"]
+modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(-80, 0)
 rotation = 0.610865
 
-[node name="RightArmSprite" type="Sprite2D" parent="Monster/Arms/LeftArm"]
+[node name="LeftArmSprite" type="Sprite2D" parent="Monster/Arms/LeftArm"]
 unique_name_in_owner = true
 position = Vector2(-16.7645, 63.6157)
 scale = Vector2(-1, 1)
@@ -530,7 +533,7 @@ text = "Color:"
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 script = ExtResource("65_rwcld")
-node = NodePath("../../../../../Monster/Arms")
+node = NodePath("../../../../../Monster/Arms/RightArm")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -538,16 +541,15 @@ size_flags_vertical = 4
 
 [node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Position
-"
+text = "Y Position"
 
-[node name="PositionSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("nodes")]
+[node name="PositionSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("node")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 min_value = -100.0
 script = ExtResource("66_xuuho")
-nodes = [NodePath("../../../../../Monster/Arms/RightArm"), NodePath("../../../../../Monster/Arms/LeftArm")]
+node = NodePath("../../../../../Monster/Arms/RightArm")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -555,16 +557,16 @@ size_flags_vertical = 4
 
 [node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "Spacing"
+text = "X Position"
 
-[node name="SpacingSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("left_node", "right_node")]
+[node name="SpacingSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("node")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+min_value = -100.0
 value = 80.0
 script = ExtResource("17_rfanc")
-left_node = NodePath("../../../../../Monster/Arms/LeftArm")
-right_node = NodePath("../../../../../Monster/Arms/RightArm")
+node = NodePath("../../../../../Monster/Arms/RightArm")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -572,9 +574,9 @@ size_flags_vertical = 4
 
 [node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
-text = "Arm Rotation"
+text = "Rotation"
 
-[node name="RotationSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer4" node_paths=PackedStringArray("left_node", "right_node")]
+[node name="RotationSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer4" node_paths=PackedStringArray("node")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -582,8 +584,61 @@ min_value = -360.0
 max_value = 360.0
 value = 30.0
 script = ExtResource("18_lmo8p")
-left_node = NodePath("../../../../../Monster/Arms/LeftArm")
-right_node = NodePath("../../../../../Monster/Arms/RightArm")
+node = NodePath("../../../../../Monster/Arms/RightArm")
+
+[node name="Arms" type="PanelContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms/MarginContainer"]
+layout_mode = 2
+
+[node name="SpriteGrid" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms/MarginContainer/HBoxContainer" node_paths=PackedStringArray("sprite")]
+layout_mode = 2
+columns = 5
+script = ExtResource("19_6e0i6")
+sprite = NodePath("../../../../../../../Monster/Arms/RightArm/RightArmSprite")
+
+[node name="ArmA" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_8d7dv")
+script = ExtResource("19_5emk4")
+
+[node name="ArmB" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_1nr2y")
+script = ExtResource("19_5emk4")
+
+[node name="ArmC" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_51kvv")
+script = ExtResource("19_5emk4")
+
+[node name="ArmD" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("11_r3ldt")
+script = ExtResource("19_5emk4")
+
+[node name="ArmE" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/Arms/MarginContainer/HBoxContainer/SpriteGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("12_b520p")
+script = ExtResource("19_5emk4")
 
 [connection signal="color_changed" from="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/ColorPickerButton" to="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/ColorPickerButton" method="_on_color_changed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmA" to="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmA" method="_on_pressed"]

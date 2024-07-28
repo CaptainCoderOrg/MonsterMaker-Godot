@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://7shrqes6ug2w"]
+[gd_scene load_steps=10 format=3 uid="uid://7shrqes6ug2w"]
 
 [ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="1_cpmn0"]
-[ext_resource type="Script" path="res://maker/monster_controller.gd" id="1_x33sc"]
 [ext_resource type="Texture2D" uid="uid://b4lmq4xpwi370" path="res://MonsterSprites/Legs/leg_whiteA.png" id="2_fxyp8"]
 [ext_resource type="Texture2D" uid="uid://c6ynkga3fc0m5" path="res://MonsterSprites/Bodies/body_whiteA.png" id="3_2203w"]
 [ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="4_xs4yd"]
@@ -12,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cy4ky1ith0auh" path="res://MonsterSprites/Face/Eyebrows/eyebrowA.png" id="9_5lwyi"]
 
 [node name="Monster" type="Node2D"]
-script = ExtResource("1_x33sc")
 
 [node name="Arms" type="Node2D" parent="."]
 

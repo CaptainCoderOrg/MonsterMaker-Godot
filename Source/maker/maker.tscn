@@ -1,10 +1,10 @@
-[gd_scene load_steps=65 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=66 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Texture2D" uid="uid://b6mjgmev72o0j" path="res://MonsterSprites/Bodies/body_whiteF.png" id="1_0d3sc"]
-[ext_resource type="PackedScene" uid="uid://7shrqes6ug2w" path="res://maker/monster.tscn" id="1_dpxp4"]
 [ext_resource type="PackedScene" uid="uid://ck2t761s0r3s4" path="res://monster_modifier_button.tscn" id="2_6ry47"]
 [ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="2_8d7dv"]
 [ext_resource type="Texture2D" uid="uid://byyw1tey0evw4" path="res://MonsterSprites/Bodies/body_whiteB.png" id="3_6wxpq"]
+[ext_resource type="Texture2D" uid="uid://c6ynkga3fc0m5" path="res://MonsterSprites/Bodies/body_whiteA.png" id="3_g2nkd"]
 [ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="3_v0umc"]
 [ext_resource type="Texture2D" uid="uid://px8c15ds77it" path="res://MonsterSprites/Bodies/body_whiteC.png" id="4_f3wo2"]
 [ext_resource type="Texture2D" uid="uid://db7b7c3xg0r1k" path="res://MonsterSprites/Face/Mouth/mouthA.png" id="4_x2s83"]
@@ -61,16 +61,136 @@
 [ext_resource type="Texture2D" uid="uid://cpnrpyud610og" path="res://MonsterSprites/Face/Mouth/mouth_closed_sad.png" id="63_2x6qg"]
 [ext_resource type="Texture2D" uid="uid://y8xkh3rhpybo" path="res://MonsterSprites/Face/Mouth/mouth_closed_teeth.png" id="64_oeo2b"]
 [ext_resource type="Texture2D" uid="uid://bd6cjevw6t2jq" path="res://MonsterSprites/Face/Nose/nose_brown.png" id="65_qxrsx"]
+[ext_resource type="Script" path="res://maker/sprite_color_picker_button.gd" id="65_rwcld"]
 [ext_resource type="Texture2D" uid="uid://bg00fglso843" path="res://MonsterSprites/Face/Nose/nose_green.png" id="67_mvyxu"]
 [ext_resource type="Texture2D" uid="uid://cy6tften5gy72" path="res://MonsterSprites/Face/Nose/nose_yellow.png" id="69_vsnk2"]
 [ext_resource type="Texture2D" uid="uid://3ebryuvo88ky" path="res://MonsterSprites/Face/NoseDecoration/snot_large.png" id="70_8wsnj"]
 
 [node name="Maker" type="Node2D"]
 
-[node name="Monster" parent="." instance=ExtResource("1_dpxp4")]
+[node name="Monster" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(854, 248)
-script = null
+
+[node name="Arms" type="Node2D" parent="Monster"]
+
+[node name="RightArm" type="Node2D" parent="Monster/Arms"]
+position = Vector2(80, 0)
+rotation = -0.598648
+
+[node name="LeftArmSprite" type="Sprite2D" parent="Monster/Arms/RightArm"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
+position = Vector2(20, 59)
+texture = ExtResource("2_8d7dv")
+
+[node name="LeftArm" type="Node2D" parent="Monster/Arms"]
+position = Vector2(-80, 0)
+rotation = 0.610865
+
+[node name="RightArmSprite" type="Sprite2D" parent="Monster/Arms/LeftArm"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
+position = Vector2(-16.7645, 63.6157)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_8d7dv")
+
+[node name="Legs" type="Node2D" parent="Monster"]
+position = Vector2(0, 60)
+
+[node name="StageRightLeg" type="Node2D" parent="Monster/Legs"]
+position = Vector2(35, 0)
+
+[node name="RightLegSprite" type="Sprite2D" parent="Monster/Legs/StageRightLeg"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
+position = Vector2(18, 70)
+texture = ExtResource("6_uljaw")
+
+[node name="StageLeftLeg" type="Node2D" parent="Monster/Legs"]
+position = Vector2(-35, 0)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="LeftLegSprite" type="Sprite2D" parent="Monster/Legs/StageLeftLeg"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
+position = Vector2(18, 70)
+texture = ExtResource("6_uljaw")
+
+[node name="Body" type="Sprite2D" parent="Monster"]
+unique_name_in_owner = true
+self_modulate = Color(3.41728e-06, 0.678804, 0.509504, 1)
+texture = ExtResource("3_g2nkd")
+
+[node name="Eyes" type="Node2D" parent="Monster"]
+position = Vector2(0, -42)
+
+[node name="LeftEyeSprite" type="Sprite2D" parent="Monster/Eyes"]
+unique_name_in_owner = true
+position = Vector2(-48, 10)
+texture = ExtResource("3_v0umc")
+
+[node name="RightEyeSprite" type="Sprite2D" parent="Monster/Eyes"]
+unique_name_in_owner = true
+position = Vector2(48, 10)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("3_v0umc")
+
+[node name="MouthSprite" type="Sprite2D" parent="Monster"]
+unique_name_in_owner = true
+position = Vector2(0, 57)
+texture = ExtResource("4_x2s83")
+
+[node name="NoseSprite" type="Sprite2D" parent="Monster"]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+texture = ExtResource("5_q3g0h")
+
+[node name="SnotSprite" type="Sprite2D" parent="Monster"]
+unique_name_in_owner = true
+position = Vector2(8, 32)
+texture = ExtResource("7_di8rp")
+
+[node name="Antenna" type="Node2D" parent="Monster"]
+position = Vector2(0, -74)
+
+[node name="LeftAntenna" type="Node2D" parent="Monster/Antenna"]
+position = Vector2(-30, 0)
+rotation = 2.79253
+scale = Vector2(1, -1)
+
+[node name="LeftAntennaSprite" type="Sprite2D" parent="Monster/Antenna/LeftAntenna"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
+position = Vector2(11, -24)
+texture = ExtResource("7_r027q")
+
+[node name="RightAntenna" type="Node2D" parent="Monster/Antenna"]
+position = Vector2(30, 0)
+rotation = 0.359538
+
+[node name="RightAntennaSprite" type="Sprite2D" parent="Monster/Antenna/RightAntenna"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
+position = Vector2(11, -24)
+texture = ExtResource("7_r027q")
+
+[node name="Brows" type="Node2D" parent="Monster"]
+position = Vector2(0, -66)
+
+[node name="LeftBrow" type="Sprite2D" parent="Monster/Brows"]
+unique_name_in_owner = true
+position = Vector2(-47.5, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("9_yk71p")
+
+[node name="RightBrow" type="Sprite2D" parent="Monster/Brows"]
+unique_name_in_owner = true
+position = Vector2(50.5, 0)
+texture = ExtResource("9_yk71p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -81,6 +201,7 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer/MarginContainer"]
+visible = false
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 
@@ -104,32 +225,26 @@ columns = 3
 
 [node name="BodyA" parent="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
-script = null
 
 [node name="BodyB" parent="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("3_6wxpq")
-script = null
 
 [node name="BodyC" parent="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("4_f3wo2")
-script = null
 
 [node name="BodyD" parent="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("5_sj1dc")
-script = null
 
 [node name="BodyE" parent="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("6_ktyhp")
-script = null
 
 [node name="BodyF" parent="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("1_0d3sc")
-script = null
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -209,27 +324,22 @@ columns = 5
 [node name="LegA" parent="CanvasLayer/MarginContainer/TabContainer/Legs/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("6_uljaw")
-script = null
 
 [node name="LegB" parent="CanvasLayer/MarginContainer/TabContainer/Legs/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("15_4q8qv")
-script = null
 
 [node name="LegC" parent="CanvasLayer/MarginContainer/TabContainer/Legs/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("16_vj2wc")
-script = null
 
 [node name="LegD" parent="CanvasLayer/MarginContainer/TabContainer/Legs/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("17_gxjhg")
-script = null
 
 [node name="LegE" parent="CanvasLayer/MarginContainer/TabContainer/Legs/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("18_aikwy")
-script = null
 
 [node name="Antenna" type="PanelContainer" parent="CanvasLayer/MarginContainer/TabContainer"]
 visible = false
@@ -250,37 +360,30 @@ columns = 7
 [node name="AntennaA" parent="CanvasLayer/MarginContainer/TabContainer/Antenna/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("7_r027q")
-script = null
 
 [node name="AntennaB" parent="CanvasLayer/MarginContainer/TabContainer/Antenna/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("22_nq0w7")
-script = null
 
 [node name="AntennaC" parent="CanvasLayer/MarginContainer/TabContainer/Antenna/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("23_8rd28")
-script = null
 
 [node name="AntennaD" parent="CanvasLayer/MarginContainer/TabContainer/Antenna/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("24_qai80")
-script = null
 
 [node name="AntennaE" parent="CanvasLayer/MarginContainer/TabContainer/Antenna/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("25_ymcfj")
-script = null
 
 [node name="AntennaF" parent="CanvasLayer/MarginContainer/TabContainer/Antenna/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("26_w8vjo")
-script = null
 
 [node name="AntennaG" parent="CanvasLayer/MarginContainer/TabContainer/Antenna/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("27_kna0p")
-script = null
 
 [node name="Eyes" type="PanelContainer" parent="CanvasLayer/MarginContainer/TabContainer"]
 visible = false
@@ -300,87 +403,70 @@ columns = 9
 [node name="EyeA" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("3_v0umc")
-script = null
 
 [node name="EyeA2" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("30_7sto3")
-script = null
 
 [node name="EyeA3" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("31_lkfxc")
-script = null
 
 [node name="EyeA4" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("32_c34x7")
-script = null
 
 [node name="EyeA5" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("33_jk1ba")
-script = null
 
 [node name="EyeA6" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("34_vfas7")
-script = null
 
 [node name="EyeA7" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("35_vogf1")
-script = null
 
 [node name="EyeA8" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("36_20qtd")
-script = null
 
 [node name="EyeA9" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("37_xy6vv")
-script = null
 
 [node name="EyeA10" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("38_4r7sb")
-script = null
 
 [node name="EyeA11" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("39_hotqx")
-script = null
 
 [node name="EyeA12" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("40_e0dop")
-script = null
 
 [node name="EyeA13" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("41_m8kcy")
-script = null
 
 [node name="EyeA14" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("42_5m6tj")
-script = null
 
 [node name="EyeA15" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("43_3eqvo")
-script = null
 
 [node name="EyeA16" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("44_ajmvc")
-script = null
 
 [node name="EyeA17" parent="CanvasLayer/MarginContainer/TabContainer/Eyes/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("45_7xhwc")
-script = null
 
 [node name="Brows" type="PanelContainer" parent="CanvasLayer/MarginContainer/TabContainer"]
 visible = false
@@ -400,17 +486,14 @@ columns = 7
 [node name="BrowA" parent="CanvasLayer/MarginContainer/TabContainer/Brows/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("9_yk71p")
-script = null
 
 [node name="BrowB" parent="CanvasLayer/MarginContainer/TabContainer/Brows/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("48_s3gcv")
-script = null
 
 [node name="BrowBC" parent="CanvasLayer/MarginContainer/TabContainer/Brows/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("49_x1n0g")
-script = null
 
 [node name="Mouth" type="PanelContainer" parent="CanvasLayer/MarginContainer/TabContainer"]
 visible = false
@@ -430,72 +513,58 @@ columns = 7
 [node name="MouthA" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("4_x2s83")
-script = null
 
 [node name="MouthA2" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("52_wvbr3")
-script = null
 
 [node name="MouthA3" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("53_itubx")
-script = null
 
 [node name="MouthA4" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("54_doo3n")
-script = null
 
 [node name="MouthA5" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("55_7wyqn")
-script = null
 
 [node name="MouthA6" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("56_rcccs")
-script = null
 
 [node name="MouthA7" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("57_vp3ft")
-script = null
 
 [node name="MouthA8" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("58_cu05k")
-script = null
 
 [node name="MouthA9" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("59_5dyqv")
-script = null
 
 [node name="MouthA10" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("60_n4ewf")
-script = null
 
 [node name="MouthA11" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("61_3hxwq")
-script = null
 
 [node name="MouthA12" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("62_o635h")
-script = null
 
 [node name="MouthA13" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("63_2x6qg")
-script = null
 
 [node name="MouthA14" parent="CanvasLayer/MarginContainer/TabContainer/Mouth/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("64_oeo2b")
-script = null
 
 [node name="Nose" type="PanelContainer" parent="CanvasLayer/MarginContainer/TabContainer"]
 visible = false
@@ -515,22 +584,18 @@ columns = 7
 [node name="Nose" parent="CanvasLayer/MarginContainer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("65_qxrsx")
-script = null
 
 [node name="Nose2" parent="CanvasLayer/MarginContainer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("67_mvyxu")
-script = null
 
 [node name="Nose3" parent="CanvasLayer/MarginContainer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("5_q3g0h")
-script = null
 
 [node name="Nose4" parent="CanvasLayer/MarginContainer/TabContainer/Nose/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("69_vsnk2")
-script = null
 
 [node name="Snot" type="PanelContainer" parent="CanvasLayer/MarginContainer/TabContainer"]
 visible = false
@@ -550,12 +615,66 @@ columns = 7
 [node name="Snot" parent="CanvasLayer/MarginContainer/TabContainer/Snot/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("70_8wsnj")
-script = null
 
 [node name="Snot2" parent="CanvasLayer/MarginContainer/TabContainer/Snot/MarginContainer/BodyGrid" instance=ExtResource("2_6ry47")]
 layout_mode = 2
 texture_normal = ExtResource("7_di8rp")
-script = null
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("sprites")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+script = ExtResource("65_rwcld")
+sprites = [NodePath("../../../../../Monster/Arms/RightArm/LeftArmSprite"), NodePath("../../../../../Monster/Arms/LeftArm/RightArmSprite")]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Height"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Spacing"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Arm Rotation"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [connection signal="color_changed" from="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/ColorPickerButton" to="CanvasLayer/MarginContainer/TabContainer/Body/MarginContainer/HBoxContainer/ColorPickerButton" method="_on_color_changed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmA" to="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmA" method="_on_pressed"]
@@ -564,5 +683,4 @@ script = null
 [connection signal="pressed" from="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmD" to="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmD" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmE" to="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/BodyGrid/ArmE" method="_on_pressed"]
 [connection signal="color_changed" from="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/ColorPickerButton" to="CanvasLayer/MarginContainer/TabContainer/Arms/MarginContainer/HBoxContainer/ColorPickerButton" method="_on_color_changed"]
-
-[editable path="Monster"]
+[connection signal="color_changed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/ColorPickerButton" to="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/ColorPickerButton" method="_on_color_changed"]

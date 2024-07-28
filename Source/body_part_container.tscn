@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsm5vhw0hn815"]
+
+[ext_resource type="PackedScene" uid="uid://ck2t761s0r3s4" path="res://monster_modifier_button.tscn" id="1_crq2v"]
+[ext_resource type="Script" path="res://body_part_container.gd" id="1_rhsr5"]
+[ext_resource type="Texture2D" uid="uid://byyw1tey0evw4" path="res://MonsterSprites/Bodies/body_whiteB.png" id="2_dfahk"]
+[ext_resource type="Texture2D" uid="uid://px8c15ds77it" path="res://MonsterSprites/Bodies/body_whiteC.png" id="3_41xt6"]
+[ext_resource type="Texture2D" uid="uid://c5u1thpitxoe7" path="res://MonsterSprites/Bodies/body_whiteD.png" id="4_tal3g"]
+[ext_resource type="Texture2D" uid="uid://c0fyjib2ryjp1" path="res://MonsterSprites/Bodies/body_whiteE.png" id="5_vkgaq"]
+[ext_resource type="Texture2D" uid="uid://b6mjgmev72o0j" path="res://MonsterSprites/Bodies/body_whiteF.png" id="6_v2fof"]
+[ext_resource type="Script" path="res://maker/color_grid_picker.gd" id="7_ebtng"]
+
+[node name="Body" type="PanelContainer"]
+script = ExtResource("1_rhsr5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BodyGrid" type="GridContainer" parent="MarginContainer/HBoxContainer"]
+modulate = Color(3.41728e-06, 0.678804, 0.509504, 1)
+layout_mode = 2
+columns = 3
+
+[node name="BodyA" parent="MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("1_crq2v")]
+layout_mode = 2
+
+[node name="BodyB" parent="MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("1_crq2v")]
+layout_mode = 2
+texture_normal = ExtResource("2_dfahk")
+
+[node name="BodyC" parent="MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("1_crq2v")]
+layout_mode = 2
+texture_normal = ExtResource("3_41xt6")
+
+[node name="BodyD" parent="MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("1_crq2v")]
+layout_mode = 2
+texture_normal = ExtResource("4_tal3g")
+
+[node name="BodyE" parent="MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("1_crq2v")]
+layout_mode = 2
+texture_normal = ExtResource("5_vkgaq")
+
+[node name="BodyF" parent="MarginContainer/HBoxContainer/BodyGrid" instance=ExtResource("1_crq2v")]
+layout_mode = 2
+texture_normal = ExtResource("6_v2fof")
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Color"
+script = ExtResource("7_ebtng")
+
+[connection signal="color_changed" from="MarginContainer/HBoxContainer/ColorPickerButton" to="MarginContainer/HBoxContainer/ColorPickerButton" method="_on_color_changed"]

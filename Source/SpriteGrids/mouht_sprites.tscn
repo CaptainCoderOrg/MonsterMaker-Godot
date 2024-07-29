@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=3 uid="uid://xusc57xame7m"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_k7mew"]
+[ext_resource type="Texture2D" uid="uid://db7b7c3xg0r1k" path="res://MonsterSprites/Face/Mouth/mouthA.png" id="2_7ax3n"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_ffatl"]
+[ext_resource type="Texture2D" uid="uid://hh468sg71x6m" path="res://MonsterSprites/Face/Mouth/mouthB.png" id="4_k3wly"]
+[ext_resource type="Texture2D" uid="uid://dba2dqohcebir" path="res://MonsterSprites/Face/Mouth/mouthC.png" id="5_d3kch"]
+[ext_resource type="Texture2D" uid="uid://epp86o4ll7bo" path="res://MonsterSprites/Face/Mouth/mouthD.png" id="6_1rpan"]
+[ext_resource type="Texture2D" uid="uid://b841gshqrnlqo" path="res://MonsterSprites/Face/Mouth/mouthE.png" id="7_yvqm8"]
+[ext_resource type="Texture2D" uid="uid://cm865ysod8nq4" path="res://MonsterSprites/Face/Mouth/mouthF.png" id="8_s1gv2"]
+[ext_resource type="Texture2D" uid="uid://s8hmkqvecndb" path="res://MonsterSprites/Face/Mouth/mouthG.png" id="9_eo41a"]
+[ext_resource type="Texture2D" uid="uid://cyh5j6m8ta0qn" path="res://MonsterSprites/Face/Mouth/mouthH.png" id="10_4yqo1"]
+[ext_resource type="Texture2D" uid="uid://dgpau5oftrvia" path="res://MonsterSprites/Face/Mouth/mouthI.png" id="11_ynwvi"]
+[ext_resource type="Texture2D" uid="uid://6g1i4p7nen74" path="res://MonsterSprites/Face/Mouth/mouthJ.png" id="12_fs4bn"]
+[ext_resource type="Texture2D" uid="uid://c26puykwokxmu" path="res://MonsterSprites/Face/Mouth/mouth_closed_fangs.png" id="13_xklx8"]
+[ext_resource type="Texture2D" uid="uid://m4ku6gwdv60r" path="res://MonsterSprites/Face/Mouth/mouth_closed_happy.png" id="14_anwa5"]
+[ext_resource type="Texture2D" uid="uid://cpnrpyud610og" path="res://MonsterSprites/Face/Mouth/mouth_closed_sad.png" id="15_fu6wa"]
+[ext_resource type="Texture2D" uid="uid://y8xkh3rhpybo" path="res://MonsterSprites/Face/Mouth/mouth_closed_teeth.png" id="16_b4cqm"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 7
+script = ExtResource("1_k7mew")
+
+[node name="Mouth1" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_7ax3n")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_k3wly")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth3" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_d3kch")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth4" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_1rpan")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth5" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_yvqm8")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth6" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_s1gv2")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth7" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_eo41a")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth8" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_4yqo1")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth9" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("11_ynwvi")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth10" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("12_fs4bn")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth11" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("13_xklx8")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth12" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("14_anwa5")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth13" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("15_fu6wa")
+script = ExtResource("3_ffatl")
+
+[node name="Mouth14" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_b4cqm")
+script = ExtResource("3_ffatl")

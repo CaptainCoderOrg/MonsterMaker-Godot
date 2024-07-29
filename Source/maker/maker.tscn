@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=24 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Script" path="res://maker/monster_component.gd" id="1_wwnvu"]
 [ext_resource type="PackedScene" uid="uid://ciefuun2yoi34" path="res://body_part_container.tscn" id="2_6ry47"]
@@ -18,8 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://brasmimxtld2k" path="res://MonsterSprites/Arms/arm_whiteB.png" id="9_1nr2y"]
 [ext_resource type="Texture2D" uid="uid://cy4ky1ith0auh" path="res://MonsterSprites/Face/Eyebrows/eyebrowA.png" id="9_yk71p"]
 [ext_resource type="Texture2D" uid="uid://b06ownhdk4bl2" path="res://MonsterSprites/Arms/arm_whiteC.png" id="10_51kvv"]
-[ext_resource type="PackedScene" uid="uid://xusc57xame7m" path="res://SpriteGrids/mouht_sprites.tscn" id="10_fbocu"]
+[ext_resource type="PackedScene" uid="uid://xusc57xame7m" path="res://SpriteGrids/mouth_sprites.tscn" id="10_fbocu"]
 [ext_resource type="Texture2D" uid="uid://bdr1bhdcshjep" path="res://MonsterSprites/Arms/arm_whiteD.png" id="11_r3ldt"]
+[ext_resource type="PackedScene" uid="uid://bvebni7qdaikq" path="res://SpriteGrids/nose_sprites.tscn" id="12_57vh6"]
 [ext_resource type="Texture2D" uid="uid://8fdnpu84kskv" path="res://MonsterSprites/Arms/arm_whiteE.png" id="12_b520p"]
 [ext_resource type="PackedScene" uid="uid://c2imyk2an5w20" path="res://component_controller.tscn" id="15_c4i38"]
 
@@ -168,8 +169,20 @@ rotation = 0.0
 scale = Vector2(1, 1)
 texture = ExtResource("4_x2s83")
 
-[node name="NoseSprite" type="Sprite2D" parent="Monster"]
-position = Vector2(0, 1)
+[node name="NosePivot" type="Node2D" parent="Monster"]
+
+[node name="Nose" type="Node2D" parent="Monster/NosePivot" node_paths=PackedStringArray("sprite", "controller")]
+scale = Vector2(-1, 1)
+script = ExtResource("1_wwnvu")
+component_name = "Mouth"
+sprite = NodePath("NoseSprite")
+controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("12_57vh6")
+
+[node name="NoseSprite" parent="Monster/NosePivot/Nose" instance=ExtResource("3_ep4uh")]
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
 texture = ExtResource("5_q3g0h")
 
 [node name="SnotSprite" type="Sprite2D" parent="Monster"]

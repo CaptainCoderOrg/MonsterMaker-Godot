@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvebni7qdaikq"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_gg0xi"]
+[ext_resource type="Texture2D" uid="uid://bd6cjevw6t2jq" path="res://MonsterSprites/Face/Nose/nose_brown.png" id="2_hp3vt"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_cfhqi"]
+[ext_resource type="Texture2D" uid="uid://bg00fglso843" path="res://MonsterSprites/Face/Nose/nose_green.png" id="4_hbmab"]
+[ext_resource type="Texture2D" uid="uid://7ess8sj274qu" path="res://MonsterSprites/Face/Nose/nose_red.png" id="5_p1qqd"]
+[ext_resource type="Texture2D" uid="uid://cy6tften5gy72" path="res://MonsterSprites/Face/Nose/nose_yellow.png" id="6_aj2wk"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 7
+script = ExtResource("1_gg0xi")
+
+[node name="Nose1" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_hp3vt")
+script = ExtResource("3_cfhqi")
+
+[node name="Nose2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_hbmab")
+script = ExtResource("3_cfhqi")
+
+[node name="Nose3" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_p1qqd")
+script = ExtResource("3_cfhqi")
+
+[node name="Nose4" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_aj2wk")
+script = ExtResource("3_cfhqi")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3ar4jvyreo8k"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_weecq"]
+[ext_resource type="Texture2D" uid="uid://b4lmq4xpwi370" path="res://MonsterSprites/Legs/leg_whiteA.png" id="2_joomb"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_g4qrx"]
+[ext_resource type="Texture2D" uid="uid://0lhuhnhdrmcf" path="res://MonsterSprites/Legs/leg_whiteB.png" id="4_fedmu"]
+[ext_resource type="Texture2D" uid="uid://dpqw1mnnhnovt" path="res://MonsterSprites/Legs/leg_whiteC.png" id="5_pvvrb"]
+[ext_resource type="Texture2D" uid="uid://d3ggp1fequ0of" path="res://MonsterSprites/Legs/leg_whiteD.png" id="6_4vvr0"]
+[ext_resource type="Texture2D" uid="uid://bhqt5xerlw807" path="res://MonsterSprites/Legs/leg_whiteE.png" id="7_wuj4i"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 9
+script = ExtResource("1_weecq")
+
+[node name="EyeA" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_joomb")
+script = ExtResource("3_g4qrx")
+
+[node name="EyeA2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_fedmu")
+script = ExtResource("3_g4qrx")
+
+[node name="EyeA3" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_pvvrb")
+script = ExtResource("3_g4qrx")
+
+[node name="EyeA4" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_4vvr0")
+script = ExtResource("3_g4qrx")
+
+[node name="EyeA5" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_wuj4i")
+script = ExtResource("3_g4qrx")

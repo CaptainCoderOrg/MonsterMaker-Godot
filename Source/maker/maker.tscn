@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=22 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Script" path="res://maker/monster_component.gd" id="1_wwnvu"]
 [ext_resource type="PackedScene" uid="uid://ciefuun2yoi34" path="res://body_part_container.tscn" id="2_6ry47"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hgdp5c0pk2qf" path="res://clickable_sprite.tscn" id="3_ep4uh"]
 [ext_resource type="Texture2D" uid="uid://c6ynkga3fc0m5" path="res://MonsterSprites/Bodies/body_whiteA.png" id="3_g2nkd"]
 [ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="3_v0umc"]
+[ext_resource type="PackedScene" uid="uid://b3ar4jvyreo8k" path="res://SpriteGrids/leg_sprites.tscn" id="4_gr8e7"]
 [ext_resource type="Texture2D" uid="uid://db7b7c3xg0r1k" path="res://MonsterSprites/Face/Mouth/mouthA.png" id="4_x2s83"]
 [ext_resource type="PackedScene" uid="uid://c4os5iaekbnwn" path="res://SpriteGrids/body_sprites.tscn" id="5_1cjv0"]
 [ext_resource type="Texture2D" uid="uid://7ess8sj274qu" path="res://MonsterSprites/Face/Nose/nose_red.png" id="5_q3g0h"]
@@ -30,7 +31,6 @@ position = Vector2(854, 248)
 [node name="Arms" type="Node2D" parent="Monster"]
 
 [node name="RightArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite", "controller")]
-unique_name_in_owner = true
 modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(80, 0)
 rotation = -0.523599
@@ -47,7 +47,6 @@ rotation = 0.0
 scale = Vector2(1, 1)
 
 [node name="LeftArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite", "controller")]
-unique_name_in_owner = true
 modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(-80, 0)
 rotation = 0.610865
@@ -63,24 +62,40 @@ unique_name_in_owner = true
 [node name="Legs" type="Node2D" parent="Monster"]
 position = Vector2(0, 60)
 
-[node name="StageRightLeg" type="Node2D" parent="Monster/Legs"]
+[node name="RightLegPivot" type="Node2D" parent="Monster/Legs"]
 position = Vector2(35, 0)
 
-[node name="RightLegSprite" type="Sprite2D" parent="Monster/Legs/StageRightLeg"]
+[node name="StageRightLeg" type="Node2D" parent="Monster/Legs/RightLegPivot" node_paths=PackedStringArray("sprite", "controller")]
+modulate = Color(0, 0.86, 0.645, 1)
+script = ExtResource("1_wwnvu")
+component_name = "Right Leg"
+sprite = NodePath("RightLegSprite")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("4_gr8e7")
+
+[node name="RightLegSprite" parent="Monster/Legs/RightLegPivot/StageRightLeg" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
-self_modulate = Color(0, 0.86, 0.645, 1)
-position = Vector2(18, 70)
+position = Vector2(10, 64)
+rotation = 0.0
+scale = Vector2(1, 1)
 texture = ExtResource("6_uljaw")
 
-[node name="StageLeftLeg" type="Node2D" parent="Monster/Legs"]
+[node name="LeftLegPivot" type="Node2D" parent="Monster/Legs"]
 position = Vector2(-35, 0)
-rotation = -3.14159
-scale = Vector2(1, -1)
+scale = Vector2(-1, 1)
 
-[node name="LeftLegSprite" type="Sprite2D" parent="Monster/Legs/StageLeftLeg"]
-unique_name_in_owner = true
-self_modulate = Color(0, 0.86, 0.645, 1)
-position = Vector2(18, 70)
+[node name="LeftLeg" type="Node2D" parent="Monster/Legs/LeftLegPivot" node_paths=PackedStringArray("sprite", "controller")]
+modulate = Color(0, 0.86, 0.645, 1)
+script = ExtResource("1_wwnvu")
+component_name = "Left Leg"
+sprite = NodePath("LeftLegSprite")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("4_gr8e7")
+
+[node name="LeftLegSprite" parent="Monster/Legs/LeftLegPivot/LeftLeg" instance=ExtResource("3_ep4uh")]
+position = Vector2(10, 64)
+rotation = 0.0
+scale = Vector2(1, 1)
 texture = ExtResource("6_uljaw")
 
 [node name="Body" type="Node2D" parent="Monster" node_paths=PackedStringArray("sprite", "controller")]
@@ -107,6 +122,7 @@ position = Vector2(50, 10)
 [node name="RightEye" type="Node2D" parent="Monster/Eyes/RightEyePivot" node_paths=PackedStringArray("sprite", "controller")]
 scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
+component_name = "Right Eye"
 sprite = NodePath("RightEyeSprite")
 controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
 sprite_grid = ExtResource("7_w1m2t")
@@ -122,6 +138,7 @@ position = Vector2(-50, 10)
 
 [node name="LeftEye" type="Node2D" parent="Monster/Eyes/LeftEyePivot" node_paths=PackedStringArray("sprite", "controller")]
 script = ExtResource("1_wwnvu")
+component_name = "Left Eye"
 sprite = NodePath("LeftEyeSprite")
 controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
 sprite_grid = ExtResource("7_w1m2t")
@@ -134,17 +151,14 @@ scale = Vector2(1, 1)
 texture = ExtResource("3_v0umc")
 
 [node name="MouthSprite" type="Sprite2D" parent="Monster"]
-unique_name_in_owner = true
 position = Vector2(0, 57)
 texture = ExtResource("4_x2s83")
 
 [node name="NoseSprite" type="Sprite2D" parent="Monster"]
-unique_name_in_owner = true
 position = Vector2(0, 1)
 texture = ExtResource("5_q3g0h")
 
 [node name="SnotSprite" type="Sprite2D" parent="Monster"]
-unique_name_in_owner = true
 position = Vector2(8, 32)
 texture = ExtResource("7_di8rp")
 

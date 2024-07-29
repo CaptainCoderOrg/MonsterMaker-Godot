@@ -8,7 +8,7 @@ func _ready():
 	controller.target_changed.connect(_update_target)
 
 func _on_color_changed(color):
-	controller.target.modulate = color
+	controller.target.sprite.self_modulate = color
 	
 func _update_target(target : MonsterComponent):
-	color = controller.target.modulate
+	color = controller.target.sprite.self_modulate

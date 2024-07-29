@@ -36,7 +36,6 @@ position = Vector2(854, 248)
 [node name="Arms" type="Node2D" parent="Monster"]
 
 [node name="RightArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(80, 0)
 rotation = -0.523599
 script = ExtResource("1_wwnvu")
@@ -47,12 +46,12 @@ sprite_grid = ExtResource("2_43pcx")
 
 [node name="RightArmSprite" parent="Monster/Arms/RightArm" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(20, 59)
 rotation = 0.0
 scale = Vector2(1, 1)
 
 [node name="LeftArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(-80, 0)
 rotation = 0.610865
 script = ExtResource("1_wwnvu")
@@ -63,6 +62,7 @@ sprite_grid = ExtResource("2_43pcx")
 
 [node name="LeftArmSprite" parent="Monster/Arms/LeftArm" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
 
 [node name="Legs" type="Node2D" parent="Monster"]
 position = Vector2(0, 60)
@@ -71,7 +71,6 @@ position = Vector2(0, 60)
 position = Vector2(35, 0)
 
 [node name="StageRightLeg" type="Node2D" parent="Monster/Legs/RightLegPivot" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Right Leg"
 sprite = NodePath("RightLegSprite")
@@ -80,6 +79,7 @@ sprite_grid = ExtResource("4_gr8e7")
 
 [node name="RightLegSprite" parent="Monster/Legs/RightLegPivot/StageRightLeg" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
+self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(10, 64)
 rotation = 0.0
 scale = Vector2(1, 1)
@@ -90,7 +90,6 @@ position = Vector2(-35, 0)
 scale = Vector2(-1, 1)
 
 [node name="LeftLeg" type="Node2D" parent="Monster/Legs/LeftLegPivot" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Left Leg"
 sprite = NodePath("LeftLegSprite")
@@ -98,13 +97,13 @@ controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentControll
 sprite_grid = ExtResource("4_gr8e7")
 
 [node name="LeftLegSprite" parent="Monster/Legs/LeftLegPivot/LeftLeg" instance=ExtResource("3_ep4uh")]
+self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(10, 64)
 rotation = 0.0
 scale = Vector2(1, 1)
 texture = ExtResource("6_uljaw")
 
 [node name="Body" type="Node2D" parent="Monster" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(3.41728e-06, 0.678804, 0.509504, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Body"
 sprite = NodePath("BodySprite")
@@ -113,6 +112,7 @@ sprite_grid = ExtResource("5_1cjv0")
 
 [node name="BodySprite" parent="Monster/Body" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
+self_modulate = Color(3.41728e-06, 0.678804, 0.509504, 1)
 position = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
@@ -212,7 +212,6 @@ position = Vector2(0, -74)
 position = Vector2(-50, -12)
 
 [node name="LeftAntenna" type="Node2D" parent="Monster/Antenna/LeftAntennaPivot" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 rotation = -0.261799
 scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
@@ -222,6 +221,7 @@ controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentControll
 sprite_grid = ExtResource("16_rvrer")
 
 [node name="LeftAntennaSprite" parent="Monster/Antenna/LeftAntennaPivot/LeftAntenna" instance=ExtResource("3_ep4uh")]
+self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(0, -10)
 rotation = 0.0
 scale = Vector2(1, 1)
@@ -231,7 +231,6 @@ texture = ExtResource("7_r027q")
 position = Vector2(50, -12)
 
 [node name="RightAntenna" type="Node2D" parent="Monster/Antenna/RightAntennaPivot" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(4, 4)
 rotation = 0.261799
 script = ExtResource("1_wwnvu")
@@ -241,6 +240,7 @@ controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentControll
 sprite_grid = ExtResource("16_rvrer")
 
 [node name="RightAntennaSprite" parent="Monster/Antenna/RightAntennaPivot/RightAntenna" instance=ExtResource("3_ep4uh")]
+self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(0, -10)
 rotation = 0.0
 scale = Vector2(1, 1)
@@ -253,7 +253,6 @@ position = Vector2(0, -66)
 position = Vector2(-50, 16)
 
 [node name="LeftBrow" type="Node2D" parent="Monster/Brows/LeftBrowPivot" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Left Brow"
@@ -271,7 +270,6 @@ texture = ExtResource("9_yk71p")
 position = Vector2(50, 16)
 
 [node name="RightBrow" type="Node2D" parent="Monster/Brows/RightBrowPivot" node_paths=PackedStringArray("sprite", "controller")]
-modulate = Color(0, 0.86, 0.645, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Right Brow"
 sprite = NodePath("RightBrowSprite")

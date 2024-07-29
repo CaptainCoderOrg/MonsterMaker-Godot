@@ -31,9 +31,3 @@ func _on_area_2d_mouse_entered():
 
 func _on_area_2d_mouse_exited():
 	highlight.visible = false
-
-func _on_area_2d_mouse_shape_entered(shape_idx):
-	print("Mouse Shape Entered: %s", shape_idx)
-
-func _on_area_2d_mouse_shape_exited(shape_idx):
-	print("Mouse Shape Exited: %s", shape_idx)

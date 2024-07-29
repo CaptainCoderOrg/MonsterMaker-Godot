@@ -11,6 +11,7 @@ func _ready():
 	var parent = get_parent()
 	assert(parent is MonsterComponent, "Clickable Sprite' parent must be a MonsterComponent")
 	clicked.connect(get_parent()._on_click)
+	update_shape()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func update_shape():

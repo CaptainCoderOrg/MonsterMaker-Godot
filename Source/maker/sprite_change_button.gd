@@ -10,4 +10,3 @@ func _ready():
 
 func _on_button_pressed():
 	sprite_grid.update_sprite(texture_normal)
-

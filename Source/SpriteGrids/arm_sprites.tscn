@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhlh8h6p2w023"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_bn6mp"]
+[ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="2_ly516"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_qp28x"]
+[ext_resource type="Texture2D" uid="uid://brasmimxtld2k" path="res://MonsterSprites/Arms/arm_whiteB.png" id="4_tgo65"]
+[ext_resource type="Texture2D" uid="uid://b06ownhdk4bl2" path="res://MonsterSprites/Arms/arm_whiteC.png" id="5_ys51u"]
+[ext_resource type="Texture2D" uid="uid://bdr1bhdcshjep" path="res://MonsterSprites/Arms/arm_whiteD.png" id="6_dxb3y"]
+[ext_resource type="Texture2D" uid="uid://8fdnpu84kskv" path="res://MonsterSprites/Arms/arm_whiteE.png" id="7_lf1ea"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 5
+script = ExtResource("1_bn6mp")
+
+[node name="ArmA" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ly516")
+script = ExtResource("3_qp28x")
+
+[node name="ArmB" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_tgo65")
+script = ExtResource("3_qp28x")
+
+[node name="ArmC" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ys51u")
+script = ExtResource("3_qp28x")
+
+[node name="ArmD" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_dxb3y")
+script = ExtResource("3_qp28x")
+
+[node name="ArmE" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_lf1ea")
+script = ExtResource("3_qp28x")

@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=20 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Script" path="res://maker/monster_component.gd" id="1_wwnvu"]
 [ext_resource type="PackedScene" uid="uid://ciefuun2yoi34" path="res://body_part_container.tscn" id="2_6ry47"]
 [ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="2_8d7dv"]
+[ext_resource type="PackedScene" uid="uid://bhlh8h6p2w023" path="res://SpriteGrids/arm_sprites.tscn" id="2_43pcx"]
 [ext_resource type="PackedScene" uid="uid://hgdp5c0pk2qf" path="res://clickable_sprite.tscn" id="3_ep4uh"]
 [ext_resource type="Texture2D" uid="uid://c6ynkga3fc0m5" path="res://MonsterSprites/Bodies/body_whiteA.png" id="3_g2nkd"]
 [ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="3_v0umc"]
 [ext_resource type="Texture2D" uid="uid://db7b7c3xg0r1k" path="res://MonsterSprites/Face/Mouth/mouthA.png" id="4_x2s83"]
+[ext_resource type="PackedScene" uid="uid://c4os5iaekbnwn" path="res://SpriteGrids/body_sprites.tscn" id="5_1cjv0"]
 [ext_resource type="Texture2D" uid="uid://7ess8sj274qu" path="res://MonsterSprites/Face/Nose/nose_red.png" id="5_q3g0h"]
 [ext_resource type="Texture2D" uid="uid://b4lmq4xpwi370" path="res://MonsterSprites/Legs/leg_whiteA.png" id="6_uljaw"]
 [ext_resource type="Texture2D" uid="uid://cu63skon0knoc" path="res://MonsterSprites/Face/NoseDecoration/snot_small.png" id="7_di8rp"]
@@ -35,6 +37,7 @@ script = ExtResource("1_wwnvu")
 component_name = "Right Arm"
 sprite = NodePath("RightArmSprite")
 controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("2_43pcx")
 
 [node name="RightArmSprite" parent="Monster/Arms/RightArm" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
@@ -51,6 +54,7 @@ script = ExtResource("1_wwnvu")
 component_name = "Left Arm"
 sprite = NodePath("LeftArmSprite")
 controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("2_43pcx")
 
 [node name="LeftArmSprite" parent="Monster/Arms/LeftArm" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
@@ -78,9 +82,19 @@ self_modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(18, 70)
 texture = ExtResource("6_uljaw")
 
-[node name="Body" type="Sprite2D" parent="Monster"]
+[node name="Body" type="Node2D" parent="Monster" node_paths=PackedStringArray("sprite", "controller")]
+modulate = Color(3.41728e-06, 0.678804, 0.509504, 1)
+script = ExtResource("1_wwnvu")
+component_name = "Body"
+sprite = NodePath("BodySprite")
+controller = NodePath("../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("5_1cjv0")
+
+[node name="BodySprite" parent="Monster/Body" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
-self_modulate = Color(3.41728e-06, 0.678804, 0.509504, 1)
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
 texture = ExtResource("3_g2nkd")
 
 [node name="Eyes" type="Node2D" parent="Monster"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4os5iaekbnwn"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_rbl7b"]
+[ext_resource type="Texture2D" uid="uid://c6ynkga3fc0m5" path="res://MonsterSprites/Bodies/body_whiteA.png" id="2_fqc8m"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_wy5xy"]
+[ext_resource type="Texture2D" uid="uid://byyw1tey0evw4" path="res://MonsterSprites/Bodies/body_whiteB.png" id="4_cgc5h"]
+[ext_resource type="Texture2D" uid="uid://px8c15ds77it" path="res://MonsterSprites/Bodies/body_whiteC.png" id="5_0quts"]
+[ext_resource type="Texture2D" uid="uid://c5u1thpitxoe7" path="res://MonsterSprites/Bodies/body_whiteD.png" id="6_whmev"]
+[ext_resource type="Texture2D" uid="uid://c0fyjib2ryjp1" path="res://MonsterSprites/Bodies/body_whiteE.png" id="7_a7dw8"]
+[ext_resource type="Texture2D" uid="uid://b6mjgmev72o0j" path="res://MonsterSprites/Bodies/body_whiteF.png" id="8_kmeng"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 3
+script = ExtResource("1_rbl7b")
+
+[node name="BodyA" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_fqc8m")
+script = ExtResource("3_wy5xy")
+
+[node name="BodyB" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_cgc5h")
+script = ExtResource("3_wy5xy")
+
+[node name="BodyC" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_0quts")
+script = ExtResource("3_wy5xy")
+
+[node name="BodyD" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_whmev")
+script = ExtResource("3_wy5xy")
+
+[node name="BodyE" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_a7dw8")
+script = ExtResource("3_wy5xy")
+
+[node name="BodyF" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_kmeng")
+script = ExtResource("3_wy5xy")

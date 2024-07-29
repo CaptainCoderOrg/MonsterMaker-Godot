@@ -1,0 +1,144 @@
+[gd_scene load_steps=20 format=3 uid="uid://d1j3x4ja1p5me"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_q6yp6"]
+[ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="2_qqhk5"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_qp51m"]
+[ext_resource type="Texture2D" uid="uid://s4fv2qa1tl15" path="res://MonsterSprites/Face/Eyes/eye_angry_green.png" id="4_yuvt3"]
+[ext_resource type="Texture2D" uid="uid://c352le5jh4wku" path="res://MonsterSprites/Face/Eyes/eye_angry_red.png" id="5_y5ygf"]
+[ext_resource type="Texture2D" uid="uid://bmmxymolt72ne" path="res://MonsterSprites/Face/Eyes/eye_blue.png" id="6_rcv3x"]
+[ext_resource type="Texture2D" uid="uid://bfkrl5i2limw" path="res://MonsterSprites/Face/Eyes/eye_closed_feminine.png" id="7_w4jut"]
+[ext_resource type="Texture2D" uid="uid://mkwgar3xn6wb" path="res://MonsterSprites/Face/Eyes/eye_closed_happy.png" id="8_fbo60"]
+[ext_resource type="Texture2D" uid="uid://c7jnpm8kixn5j" path="res://MonsterSprites/Face/Eyes/eye_cute_dark.png" id="9_680av"]
+[ext_resource type="Texture2D" uid="uid://bud0qf4atbdig" path="res://MonsterSprites/Face/Eyes/eye_cute_light.png" id="10_lanlf"]
+[ext_resource type="Texture2D" uid="uid://b3ofgmcfhdkw0" path="res://MonsterSprites/Face/Eyes/eye_dead.png" id="11_ryqiu"]
+[ext_resource type="Texture2D" uid="uid://o0hwker4xqa6" path="res://MonsterSprites/Face/Eyes/eye_human.png" id="12_ckaly"]
+[ext_resource type="Texture2D" uid="uid://cfqvjd7jt20y3" path="res://MonsterSprites/Face/Eyes/eye_human_blue.png" id="13_iuhwv"]
+[ext_resource type="Texture2D" uid="uid://b4d8xn55ubges" path="res://MonsterSprites/Face/Eyes/eye_human_green.png" id="14_1fsak"]
+[ext_resource type="Texture2D" uid="uid://cio1faqa47dcg" path="res://MonsterSprites/Face/Eyes/eye_human_red.png" id="15_k8ldb"]
+[ext_resource type="Texture2D" uid="uid://c6he6ijnyju8f" path="res://MonsterSprites/Face/Eyes/eye_psycho_dark.png" id="16_jlyoy"]
+[ext_resource type="Texture2D" uid="uid://mafn7aa34a65" path="res://MonsterSprites/Face/Eyes/eye_psycho_light.png" id="17_pcl7e"]
+[ext_resource type="Texture2D" uid="uid://0hdh8vilv0dh" path="res://MonsterSprites/Face/Eyes/eye_red.png" id="18_2o2h6"]
+[ext_resource type="Texture2D" uid="uid://0y0k2uuo072i" path="res://MonsterSprites/Face/Eyes/eye_yellow.png" id="19_3ht3s"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 9
+script = ExtResource("1_q6yp6")
+
+[node name="EyeA" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_qqhk5")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_yuvt3")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA3" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_y5ygf")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA4" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_rcv3x")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA5" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_w4jut")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA6" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_fbo60")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA7" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_680av")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA8" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_lanlf")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA9" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("11_ryqiu")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA10" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("12_ckaly")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA11" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("13_iuhwv")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA12" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("14_1fsak")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA13" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("15_k8ldb")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA14" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_jlyoy")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA15" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("17_pcl7e")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA16" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("18_2o2h6")
+script = ExtResource("3_qp51m")
+
+[node name="EyeA17" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("19_3ht3s")
+script = ExtResource("3_qp51m")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2imyk2an5w20"]
+[gd_scene load_steps=10 format=3 uid="uid://c2imyk2an5w20"]
 
 [ext_resource type="Script" path="res://maker/component_controller.gd" id="1_3xlxh"]
 [ext_resource type="Script" path="res://maker/sprite_color_picker_button.gd" id="2_62d85"]
 [ext_resource type="Script" path="res://maker/sprite_position_slider.gd" id="3_cn03k"]
+[ext_resource type="Script" path="res://slider_text_value.gd" id="4_7nxtf"]
 [ext_resource type="Script" path="res://maker/spacing_slider.gd" id="4_wg5u8"]
 [ext_resource type="Script" path="res://maker/rotation_slider.gd" id="5_rdtrs"]
 [ext_resource type="Script" path="res://maker/flip_x_toggle.gd" id="6_t6qcf"]
@@ -63,6 +64,13 @@ size_flags_vertical = 4
 min_value = -100.0
 script = ExtResource("3_cn03k")
 
+[node name="SliderText" type="LineEdit" parent="ScrollContainer/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("target")]
+layout_mode = 2
+text = "0"
+alignment = 2
+script = ExtResource("4_7nxtf")
+target = NodePath("../YPositionSlider")
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
@@ -78,6 +86,13 @@ size_flags_vertical = 4
 min_value = -100.0
 value = 80.0
 script = ExtResource("4_wg5u8")
+
+[node name="SliderText" type="LineEdit" parent="ScrollContainer/VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("target")]
+layout_mode = 2
+text = "0"
+alignment = 2
+script = ExtResource("4_7nxtf")
+target = NodePath("../XPositionSlider")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -95,6 +110,13 @@ min_value = -360.0
 max_value = 360.0
 value = 30.0
 script = ExtResource("5_rdtrs")
+
+[node name="SliderText" type="LineEdit" parent="ScrollContainer/VBoxContainer/HBoxContainer4" node_paths=PackedStringArray("target")]
+layout_mode = 2
+text = "0"
+alignment = 2
+script = ExtResource("4_7nxtf")
+target = NodePath("../RotationSlider")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2

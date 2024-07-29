@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bog0l0vm3eswc"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_k2kue"]
+[ext_resource type="Texture2D" uid="uid://cu63skon0knoc" path="res://MonsterSprites/Face/NoseDecoration/snot_small.png" id="2_uahnj"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_n41y6"]
+[ext_resource type="Texture2D" uid="uid://3ebryuvo88ky" path="res://MonsterSprites/Face/NoseDecoration/snot_large.png" id="4_ary16"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 7
+script = ExtResource("1_k2kue")
+
+[node name="Snot1" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_uahnj")
+script = ExtResource("3_n41y6")
+
+[node name="Snot2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ary16")
+script = ExtResource("3_n41y6")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://2jesv3osu1pj"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_e67dy"]
+[ext_resource type="Texture2D" uid="uid://b40w6xam6b58p" path="res://MonsterSprites/Antenna/detail_white_antenna_large.png" id="2_2tx8s"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_4m4ag"]
+[ext_resource type="Texture2D" uid="uid://00qag6jbq0pk" path="res://MonsterSprites/Antenna/detail_white_antenna_small.png" id="4_wcj2e"]
+[ext_resource type="Texture2D" uid="uid://bkffajjkl5pqp" path="res://MonsterSprites/Antenna/detail_white_ear.png" id="5_4qo0g"]
+[ext_resource type="Texture2D" uid="uid://c86vxywtay35g" path="res://MonsterSprites/Antenna/detail_white_ear_round.png" id="6_80vcc"]
+[ext_resource type="Texture2D" uid="uid://dfnf8unyebyw" path="res://MonsterSprites/Antenna/detail_white_eye.png" id="7_mfypq"]
+[ext_resource type="Texture2D" uid="uid://fanlaborj4y8" path="res://MonsterSprites/Antenna/detail_white_horn_large.png" id="8_xmaec"]
+[ext_resource type="Texture2D" uid="uid://bmwx4etu2gyvv" path="res://MonsterSprites/Antenna/detail_white_horn_small.png" id="9_3m82p"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 7
+script = ExtResource("1_e67dy")
+
+[node name="Antenna" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_2tx8s")
+script = ExtResource("3_4m4ag")
+
+[node name="Antenna2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_wcj2e")
+script = ExtResource("3_4m4ag")
+
+[node name="Antenna3" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_4qo0g")
+script = ExtResource("3_4m4ag")
+
+[node name="Antenna4" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_80vcc")
+script = ExtResource("3_4m4ag")
+
+[node name="Antenna5" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_mfypq")
+script = ExtResource("3_4m4ag")
+
+[node name="Antenna6" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_xmaec")
+script = ExtResource("3_4m4ag")
+
+[node name="Antenna7" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_3m82p")
+script = ExtResource("3_4m4ag")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd42r23hj4bm2"]
+
+[ext_resource type="Script" path="res://maker/sprite_selection_grid.gd" id="1_8vnsj"]
+[ext_resource type="Texture2D" uid="uid://cy4ky1ith0auh" path="res://MonsterSprites/Face/Eyebrows/eyebrowA.png" id="2_v87w8"]
+[ext_resource type="Script" path="res://maker/sprite_change_button.gd" id="3_2g0f0"]
+[ext_resource type="Texture2D" uid="uid://cbfq61yma7w4g" path="res://MonsterSprites/Face/Eyebrows/eyebrowB.png" id="4_gqiew"]
+[ext_resource type="Texture2D" uid="uid://bg35gcng1va37" path="res://MonsterSprites/Face/Eyebrows/eyebrowC.png" id="5_omenl"]
+
+[node name="SpriteGrid" type="GridContainer"]
+columns = 7
+script = ExtResource("1_8vnsj")
+
+[node name="Brow1" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v87w8")
+script = ExtResource("3_2g0f0")
+
+[node name="Brow2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_gqiew")
+script = ExtResource("3_2g0f0")
+
+[node name="Brow3" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_omenl")
+script = ExtResource("3_2g0f0")

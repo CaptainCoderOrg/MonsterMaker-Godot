@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=27 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Script" path="res://maker/monster_component.gd" id="1_wwnvu"]
 [ext_resource type="PackedScene" uid="uid://ciefuun2yoi34" path="res://body_part_container.tscn" id="2_6ry47"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bog0l0vm3eswc" path="res://SpriteGrids/snot_sprites.tscn" id="14_g8n8c"]
 [ext_resource type="PackedScene" uid="uid://c2imyk2an5w20" path="res://component_controller.tscn" id="15_c4i38"]
 [ext_resource type="PackedScene" uid="uid://2jesv3osu1pj" path="res://SpriteGrids/antenna_sprites.tscn" id="16_rvrer"]
+[ext_resource type="PackedScene" uid="uid://bd42r23hj4bm2" path="res://SpriteGrids/brow_sprites.tscn" id="18_yv5sp"]
 
 [node name="Maker" type="Node2D"]
 
@@ -248,16 +249,39 @@ texture = ExtResource("7_r027q")
 [node name="Brows" type="Node2D" parent="Monster"]
 position = Vector2(0, -66)
 
-[node name="LeftBrow" type="Sprite2D" parent="Monster/Brows"]
-unique_name_in_owner = true
-position = Vector2(-47.5, 0)
-rotation = 3.14159
-scale = Vector2(1, -1)
+[node name="LeftBrowPivot" type="Node2D" parent="Monster/Brows"]
+position = Vector2(-50, 16)
+
+[node name="LeftBrow" type="Node2D" parent="Monster/Brows/LeftBrowPivot" node_paths=PackedStringArray("sprite", "controller")]
+modulate = Color(0, 0.86, 0.645, 1)
+scale = Vector2(-1, 1)
+script = ExtResource("1_wwnvu")
+component_name = "Left Brow"
+sprite = NodePath("LeftBrowSprite")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("18_yv5sp")
+
+[node name="LeftBrowSprite" parent="Monster/Brows/LeftBrowPivot/LeftBrow" instance=ExtResource("3_ep4uh")]
+position = Vector2(0, -10)
+rotation = 0.0
+scale = Vector2(1, 1)
 texture = ExtResource("9_yk71p")
 
-[node name="RightBrow" type="Sprite2D" parent="Monster/Brows"]
-unique_name_in_owner = true
-position = Vector2(50.5, 0)
+[node name="RightBrowPivot" type="Node2D" parent="Monster/Brows"]
+position = Vector2(50, 16)
+
+[node name="RightBrow" type="Node2D" parent="Monster/Brows/RightBrowPivot" node_paths=PackedStringArray("sprite", "controller")]
+modulate = Color(0, 0.86, 0.645, 1)
+script = ExtResource("1_wwnvu")
+component_name = "Right Brow"
+sprite = NodePath("RightBrowSprite")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+sprite_grid = ExtResource("18_yv5sp")
+
+[node name="RightBrowSprite" parent="Monster/Brows/RightBrowPivot/RightBrow" instance=ExtResource("3_ep4uh")]
+position = Vector2(0, -10)
+rotation = 0.0
+scale = Vector2(1, 1)
 texture = ExtResource("9_yk71p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -1,11 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=19 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Script" path="res://maker/monster_component.gd" id="1_wwnvu"]
 [ext_resource type="PackedScene" uid="uid://ciefuun2yoi34" path="res://body_part_container.tscn" id="2_6ry47"]
 [ext_resource type="Texture2D" uid="uid://cpo7tndhs258d" path="res://MonsterSprites/Arms/arm_whiteA.png" id="2_8d7dv"]
+[ext_resource type="PackedScene" uid="uid://hgdp5c0pk2qf" path="res://clickable_sprite.tscn" id="3_ep4uh"]
 [ext_resource type="Texture2D" uid="uid://c6ynkga3fc0m5" path="res://MonsterSprites/Bodies/body_whiteA.png" id="3_g2nkd"]
 [ext_resource type="Texture2D" uid="uid://drgg71veoit7q" path="res://MonsterSprites/Face/Eyes/eye_angry_blue.png" id="3_v0umc"]
 [ext_resource type="Texture2D" uid="uid://db7b7c3xg0r1k" path="res://MonsterSprites/Face/Mouth/mouthA.png" id="4_x2s83"]
+[ext_resource type="Script" path="res://clickable_sprite.gd" id="4_y250l"]
 [ext_resource type="Texture2D" uid="uid://7ess8sj274qu" path="res://MonsterSprites/Face/Nose/nose_red.png" id="5_q3g0h"]
 [ext_resource type="Texture2D" uid="uid://b4lmq4xpwi370" path="res://MonsterSprites/Legs/leg_whiteA.png" id="6_uljaw"]
 [ext_resource type="Texture2D" uid="uid://cu63skon0knoc" path="res://MonsterSprites/Face/NoseDecoration/snot_small.png" id="7_di8rp"]
@@ -25,31 +27,36 @@ position = Vector2(854, 248)
 
 [node name="Arms" type="Node2D" parent="Monster"]
 
-[node name="RightArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite")]
+[node name="RightArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite", "controller")]
+unique_name_in_owner = true
 modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(80, 0)
 rotation = -0.523599
 script = ExtResource("1_wwnvu")
+component_name = "Right Arm"
 sprite = NodePath("RightArmSprite")
+controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
 
-[node name="RightArmSprite" type="Sprite2D" parent="Monster/Arms/RightArm"]
+[node name="RightArmSprite" parent="Monster/Arms/RightArm" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
 position = Vector2(20, 59)
-texture = ExtResource("2_8d7dv")
+rotation = 0.0
+scale = Vector2(1, 1)
+script = ExtResource("4_y250l")
 
-[node name="LeftArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite")]
+[node name="LeftArm" type="Node2D" parent="Monster/Arms" node_paths=PackedStringArray("sprite", "controller")]
+unique_name_in_owner = true
 modulate = Color(0, 0.86, 0.645, 1)
 position = Vector2(-80, 0)
 rotation = 0.610865
 script = ExtResource("1_wwnvu")
+component_name = "Left Arm"
 sprite = NodePath("LeftArmSprite")
+controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
 
-[node name="LeftArmSprite" type="Sprite2D" parent="Monster/Arms/LeftArm"]
+[node name="LeftArmSprite" parent="Monster/Arms/LeftArm" instance=ExtResource("3_ep4uh")]
 unique_name_in_owner = true
-position = Vector2(-16.7645, 63.6157)
-rotation = -3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("2_8d7dv")
+script = ExtResource("4_y250l")
 
 [node name="Legs" type="Node2D" parent="Monster"]
 position = Vector2(0, 60)

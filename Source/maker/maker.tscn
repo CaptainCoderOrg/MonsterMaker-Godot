@@ -29,6 +29,9 @@
 
 [node name="Maker" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
 [node name="Monster" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(854, 248)

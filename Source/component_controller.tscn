@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2imyk2an5w20"]
+[gd_scene load_steps=9 format=3 uid="uid://c2imyk2an5w20"]
 
 [ext_resource type="Script" path="res://maker/component_controller.gd" id="1_3xlxh"]
 [ext_resource type="Script" path="res://maker/sprite_color_picker_button.gd" id="2_62d85"]
@@ -7,6 +7,18 @@
 [ext_resource type="Script" path="res://maker/rotation_slider.gd" id="5_rdtrs"]
 [ext_resource type="Script" path="res://maker/flip_x_toggle.gd" id="6_t6qcf"]
 [ext_resource type="PackedScene" uid="uid://bhlh8h6p2w023" path="res://SpriteGrids/arm_sprites.tscn" id="7_tlyqi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cjrt"]
+bg_color = Color(0.478431, 0.478431, 0.478431, 0.313726)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="ComponentController" type="MarginContainer"]
 script = ExtResource("1_3xlxh")
@@ -98,6 +110,7 @@ script = ExtResource("6_t6qcf")
 
 [node name="SpriteOptions" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7cjrt")
 
 [node name="SpriteGridContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/SpriteOptions"]
 unique_name_in_owner = true

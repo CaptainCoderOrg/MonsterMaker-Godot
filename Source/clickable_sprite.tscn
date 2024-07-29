@@ -13,6 +13,12 @@ scale = Vector2(1, -1)
 texture = ExtResource("1_rtgtt")
 script = ExtResource("2_4v1ts")
 
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.607843)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("1_rtgtt")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -20,3 +26,7 @@ position = Vector2(3.98151, 4.2579)
 shape = SubResource("RectangleShape2D_573f1")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_shape_entered" from="Area2D" to="." method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Area2D" to="." method="_on_area_2d_mouse_shape_exited"]

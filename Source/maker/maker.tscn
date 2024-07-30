@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d34qk4ffs1khx"]
+[gd_scene load_steps=22 format=3 uid="uid://d34qk4ffs1khx"]
 
 [ext_resource type="Script" path="res://maker/monster_component.gd" id="1_wwnvu"]
 [ext_resource type="PackedScene" uid="uid://bhlh8h6p2w023" path="res://SpriteGrids/arm_sprites.tscn" id="2_43pcx"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c2imyk2an5w20" path="res://component_controller.tscn" id="15_c4i38"]
 [ext_resource type="PackedScene" uid="uid://2jesv3osu1pj" path="res://SpriteGrids/antenna_sprites.tscn" id="16_rvrer"]
 [ext_resource type="PackedScene" uid="uid://bd42r23hj4bm2" path="res://SpriteGrids/brow_sprites.tscn" id="18_yv5sp"]
+[ext_resource type="Script" path="res://maker/export_button.gd" id="21_iprqn"]
 
 [node name="Maker" type="Node2D"]
 
@@ -38,7 +39,7 @@ rotation = -0.523599
 script = ExtResource("1_wwnvu")
 component_name = "Right Arm"
 sprite = NodePath("RightArmSprite")
-controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("2_43pcx")
 
 [node name="RightArmSprite" parent="Monster/Arms/RightArm" instance=ExtResource("3_ep4uh")]
@@ -54,7 +55,7 @@ rotation = 0.610865
 script = ExtResource("1_wwnvu")
 component_name = "Left Arm"
 sprite = NodePath("LeftArmSprite")
-controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("2_43pcx")
 
 [node name="LeftArmSprite" parent="Monster/Arms/LeftArm" instance=ExtResource("3_ep4uh")]
@@ -71,7 +72,7 @@ position = Vector2(35, 0)
 script = ExtResource("1_wwnvu")
 component_name = "Right Leg"
 sprite = NodePath("RightLegSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("4_gr8e7")
 
 [node name="RightLegSprite" parent="Monster/Legs/RightLegPivot/StageRightLeg" instance=ExtResource("3_ep4uh")]
@@ -90,7 +91,7 @@ scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Left Leg"
 sprite = NodePath("LeftLegSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("4_gr8e7")
 
 [node name="LeftLegSprite" parent="Monster/Legs/LeftLegPivot/LeftLeg" instance=ExtResource("3_ep4uh")]
@@ -104,7 +105,7 @@ texture = ExtResource("6_uljaw")
 script = ExtResource("1_wwnvu")
 component_name = "Body"
 sprite = NodePath("BodySprite")
-controller = NodePath("../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("5_1cjv0")
 
 [node name="BodySprite" parent="Monster/Body" instance=ExtResource("3_ep4uh")]
@@ -126,7 +127,7 @@ scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Right Eye"
 sprite = NodePath("RightEyeSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("7_w1m2t")
 
 [node name="RightEyeSprite" parent="Monster/Eyes/RightEyePivot/RightEye" instance=ExtResource("3_ep4uh")]
@@ -142,7 +143,7 @@ position = Vector2(-50, 10)
 script = ExtResource("1_wwnvu")
 component_name = "Left Eye"
 sprite = NodePath("LeftEyeSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("7_w1m2t")
 
 [node name="LeftEyeSprite" parent="Monster/Eyes/LeftEyePivot/LeftEye" instance=ExtResource("3_ep4uh")]
@@ -160,7 +161,7 @@ scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Mouth"
 sprite = NodePath("MouthSprite")
-controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("10_fbocu")
 
 [node name="MouthSprite" parent="Monster/MouthPivot/Mouth" instance=ExtResource("3_ep4uh")]
@@ -176,7 +177,7 @@ scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Nose"
 sprite = NodePath("NoseSprite")
-controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("12_57vh6")
 
 [node name="NoseSprite" parent="Monster/NosePivot/Nose" instance=ExtResource("3_ep4uh")]
@@ -193,7 +194,7 @@ scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Snot"
 sprite = NodePath("SnotSprite")
-controller = NodePath("../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("14_g8n8c")
 
 [node name="SnotSprite" parent="Monster/SnotPivot/Snot" instance=ExtResource("3_ep4uh")]
@@ -214,7 +215,7 @@ scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Left Antenna"
 sprite = NodePath("LeftAntennaSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("16_rvrer")
 
 [node name="LeftAntennaSprite" parent="Monster/Antenna/LeftAntennaPivot/LeftAntenna" instance=ExtResource("3_ep4uh")]
@@ -233,7 +234,7 @@ rotation = 0.261799
 script = ExtResource("1_wwnvu")
 component_name = "Right Antenna"
 sprite = NodePath("RightAntennaSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("16_rvrer")
 
 [node name="RightAntennaSprite" parent="Monster/Antenna/RightAntennaPivot/RightAntenna" instance=ExtResource("3_ep4uh")]
@@ -254,7 +255,7 @@ scale = Vector2(-1, 1)
 script = ExtResource("1_wwnvu")
 component_name = "Left Brow"
 sprite = NodePath("LeftBrowSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("18_yv5sp")
 
 [node name="LeftBrowSprite" parent="Monster/Brows/LeftBrowPivot/LeftBrow" instance=ExtResource("3_ep4uh")]
@@ -270,7 +271,7 @@ position = Vector2(50, 16)
 script = ExtResource("1_wwnvu")
 component_name = "Right Brow"
 sprite = NodePath("RightBrowSprite")
-controller = NodePath("../../../../CanvasLayer/MarginContainer/ComponentController")
+controller = NodePath("../../../../CanvasLayer/MarginContainer/VBoxContainer/ComponentController")
 sprite_grid = ExtResource("18_yv5sp")
 
 [node name="RightBrowSprite" parent="Monster/Brows/RightBrowPivot/RightBrow" instance=ExtResource("3_ep4uh")]
@@ -281,12 +282,40 @@ texture = ExtResource("9_yk71p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" node_paths=PackedStringArray("shortcut_context")]
+offset_left = 1261.0
+offset_top = 52.0
+offset_right = 1773.0
+offset_bottom = 564.0
+shortcut_context = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+unique_name_in_owner = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+
+[node name="MonsterContainer" type="Node2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="ComponentController" parent="CanvasLayer/MarginContainer" node_paths=PackedStringArray("target") instance=ExtResource("15_c4i38")]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
-target = NodePath("../../../Monster/Arms/LeftArm")
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Export"
+script = ExtResource("21_iprqn")
+
+[node name="ComponentController" parent="CanvasLayer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("target") instance=ExtResource("15_c4i38")]
+layout_mode = 2
+target = NodePath("../../../../Monster/Arms/LeftArm")
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Button" to="CanvasLayer/MarginContainer/VBoxContainer/Button" method="_on_pressed"]

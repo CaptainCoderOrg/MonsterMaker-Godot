@@ -280,6 +280,13 @@ rotation = 0.0
 scale = Vector2(1, 1)
 texture = ExtResource("9_yk71p")
 
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+mode = 4
+initial_position = 2
+size = Vector2i(900, 550)
+access = 1
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" node_paths=PackedStringArray("shortcut_context")]
@@ -318,4 +325,5 @@ script = ExtResource("21_iprqn")
 layout_mode = 2
 target = NodePath("../../../../Monster/Arms/LeftArm")
 
+[connection signal="confirmed" from="FileDialog" to="CanvasLayer/MarginContainer/VBoxContainer/Button" method="_on_file_dialog_confirmed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Button" to="CanvasLayer/MarginContainer/VBoxContainer/Button" method="_on_pressed"]

@@ -286,14 +286,15 @@ mode = 4
 initial_position = 2
 size = Vector2i(900, 550)
 access = 1
+use_native_dialog = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" node_paths=PackedStringArray("shortcut_context")]
-offset_left = 1261.0
-offset_top = 52.0
-offset_right = 1773.0
-offset_bottom = 564.0
+offset_left = -568.0
+offset_top = -551.0
+offset_right = -56.0
+offset_bottom = -39.0
 shortcut_context = NodePath("SubViewport")
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
